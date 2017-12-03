@@ -5,7 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var passport = require('passport');
+var flash = require ('connect-flash');
+var session = require ('express-session')
 
+//routes
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -29,6 +33,9 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//require for passport
+
+//routes
 app.use('/', index);
 app.use('/users', users);
 
@@ -41,9 +48,10 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // set locals, providing error in development and production
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'production' ? err : {};  
 
   // render the error page
   res.status(err.status || 500);
