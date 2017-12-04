@@ -9,15 +9,86 @@ html
 
     //css
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous")
-    link(rel='stylesheet', href='/stylesheets/style.css')
-
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
+    
     //javascripts
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous")
     script(src="/javascripts/scripts.js")
   body
-    nav(class="navbar fixed-top navbar-light bg-dark")
+    //navbar
+    nav(class="navbar fixed-top navbar-light bg-primary justify-content-between")
       a(class="navbar-brand" href="#")
         img(src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+
+
+
+      ul(class="nav justify-content-end")
+        li(class="nav-item")
+          a(class="btn btn-light mx-1" href="#" role="button" data-toggle="modal" data-target="#signUpModal") Sign Up
+        li(class="nav-item")
+          a(class="btn btn-outline-light mx-1" href="#" role="button" data-toggle="modal" data-target="#logInModal") Log In
+  
+    //Sign Up modal
+    div(class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+      div(class="modal-dialog" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times
+          div(class="modal-body")
+            a(class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#signUpFacebookModal") sign up with facebook
+            p(class="text-center") or
+            a(class="btn btn-outline-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#signUpEmailModal" data-dismiss="modal") sign up with email
+
+    //Email Sign Up modal
+    div(class="modal fade" id="signUpEmailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+      div(class="modal-dialog" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times
+          div(class="modal-body")
+              div(class="form-group")
+                input(type="firstname" class="form-control" id="firstname" placeholder="First Name")
+              div(class="form-group")
+                input(type="lastname" class="form-control" id="lastname" placeholder="Last Name")
+              div(class="form-group")
+                input(type="email" class="form-control" id="email" placeholder="Enter Email")
+              div(class="form-group")
+                input(type="password" class="form-control" id="password" placeholder="Password")            
+              a(class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#") sign up
+
+    //Log In modal
+    div(class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+      div(class="modal-dialog" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times
+          div(class="modal-body")
+            a(class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#logInFacebookModal") log in with facebook
+            p(class="text-center") or
+            a(class="btn btn-outline-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#logInEmailModal" data-dismiss="modal") log in with email
+
+    //Email Log In modal
+    div(class="modal fade" id="logInEmailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+      div(class="modal-dialog" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times
+          div(class="modal-body")
+            form
+              div(class="form-group")
+                input(type="email" class="form-control" id="email" placeholder="Enter email")
+              div(class="form-group")
+                input(type="password" class="form-control" id="password" placeholder="Password")
+              a(class="btn btn-primary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#") log in  
+
+    //Other Pages         
     block content
+
+      

@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="jumbotron jumbotron-fluid")
+    div(class="container")
+      h1(class="display-3") #{title}
+      p(class="lead") Welcome to #{title}
