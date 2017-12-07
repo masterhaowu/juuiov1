@@ -66,4 +66,21 @@ h6 {
     .jumbotron {
       font-size: 20px; } }
 
+.navbar {
+  transition: all 0.5s; }
+
+.fa-angle-down {
+  transform: rotate(0deg);
+  transition: transform .25s linear; }
+
+.fa-angle-down.open {
+  transform: rotate(-180deg);
+  transition: transform .25s linear; }
+
+.btn:hover {
+  cursor: pointer; }
+
+.pointer:hover {
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */
