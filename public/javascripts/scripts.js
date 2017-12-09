@@ -10,7 +10,10 @@ $(document).ready(function(){
     })
 })
 
-
+//set position top
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
 
 
 //navbar button angle turn when clicked
