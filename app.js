@@ -12,6 +12,8 @@ var session = require ('express-session')
 //routes
 var index = require('./routes/index');
 var users = require('./routes/users');
+var emailsignup = require('./routes/emailsignup');
+var emaillogin = require('./routes/emaillogin');
 
 var app = express();
 
@@ -34,10 +36,29 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 //require for passport
+app.use(session({
+  secret: 'thisisjustatestforappone',// session secret
+  name: 'cookie_name',
+  proxy: true,
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(function(req,res,next){
+  res.locals.messages = req.flash();
+  next();
+});
+
+require('./config/passport')(passport); // pass passport for configuration
 
 //routes
 app.use('/', index);
 app.use('/users', users);
+app.use('/emailsignup', emailsignup);
+app.use('/emaillogin', emaillogin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
