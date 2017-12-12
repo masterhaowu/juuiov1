@@ -12,6 +12,7 @@ var session = require ('express-session')
 //routes
 var index = require('./routes/index');
 var users = require('./routes/users');
+var logout = require('./routes/logout');
 var emailsignup = require('./routes/emailsignup');
 var emaillogin = require('./routes/emaillogin');
 
@@ -57,6 +58,7 @@ require('./config/passport')(passport); // pass passport for configuration
 //routes
 app.use('/', index);
 app.use('/users', users);
+app.use('/logout', logout);
 app.use('/emailsignup', emailsignup);
 app.use('/emaillogin', emaillogin);
 

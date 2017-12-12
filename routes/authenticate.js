@@ -8,6 +8,4 @@ module.exports.isLoggedIn = (req, res, next) => {
         else
             return false;
 
-
-        
 }

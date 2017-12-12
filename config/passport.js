@@ -87,7 +87,7 @@ module.exports = function(passport) {
                         })
                             .then(user => {
                                 mail(user.firstname,user.email);
-                                return done(null, user, req.flash('success', 'Sign up Welcome!')); // create the loginMessage and save it to session as flashdata                    
+                                return done(null, user, req.flash('success', 'Sign up success! Welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata                    
                             })
                 });    
 
@@ -133,7 +133,7 @@ module.exports = function(passport) {
                     
                     // all is well, return successful user
                     else
-                        return done(null, user, req.flash('success', 'Welcome!')); // create the loginMessage and save it to session as flashdata
+                        return done(null, user, req.flash('success', 'Log In success! Welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
                 });
             });
         }
