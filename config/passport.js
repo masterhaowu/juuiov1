@@ -1,11 +1,18 @@
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 //load up nodemailer
 const nodemailer = require('nodemailer');
 
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
 
 // load up the user model
 const User = require('../models').User;
+
+// load the auth variables
+var configAuth = require('./auth');
 
 // load up bcrypt
 var bCrypt = require('bcrypt-nodejs')
@@ -75,9 +82,9 @@ module.exports = function(passport) {
 
                     // if there it is unique, create users
                     if (users.length > 0)
-                        return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
-
                     // return email taken
+                        return done(null, false, req.flash('signupMessage', 'That email is already taken or try logging in with facebook.'));
+
                     else  
                         User.create({
                             firstname: req.body.firstname,
@@ -87,7 +94,7 @@ module.exports = function(passport) {
                         })
                             .then(user => {
                                 mail(user.firstname,user.email);
-                                return done(null, user, req.flash('success', 'Sign up success! Welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata                    
+                                return done(null, user, req.flash('success', 'Sign up success! ' + user.firstname + ' ,welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata                    
                             })
                 });    
 
@@ -95,7 +102,8 @@ module.exports = function(passport) {
 
         }
     ));
- // =========================================================================
+    
+    // =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
     // we are using named strategies since we have one for login and one for signup
@@ -126,6 +134,11 @@ module.exports = function(passport) {
                     // if no user is found, return the message
                     if (!user)
                         return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+                    
+                    // if user is found but password is null
+                    if (user.password == null)
+                        return done(null, false, req.flash('loginMessage', 'Please log in with facebook.')); // create the loginMessage and save it to session as flashdata
+                    
 
                     // if the user is found but the password is wrong
                     if (!validPassword(password,user.password))
@@ -133,12 +146,71 @@ module.exports = function(passport) {
                     
                     // all is well, return successful user
                     else
-                        return done(null, user, req.flash('success', 'Log In success! Welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
+                        return done(null, user, req.flash('success', 'Log In success! ' + user.firstname + ' ,welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
+                });
+            });
+        }
+    ));
+
+
+    // =========================================================================
+    // FACEBOOK ================================================================
+    // =========================================================================
+
+    passport.use(new FacebookStrategy({
+                // pull in our app id and secret from our auth.js file
+                clientID        : configAuth.facebookAuth.clientID,
+                clientSecret    : configAuth.facebookAuth.clientSecret,
+                callbackURL     : configAuth.facebookAuth.callbackURL,
+                profileFields   : configAuth.facebookAuth.profileFields
+    },  
+        // facebook will send back the token and profile
+        function(token, refreshToken, profile, done) {
+            // asynchronous
+            // User.findAll wont fire unless data is sent back
+            process.nextTick(function() {
+
+                // find the user in the database based on their facebook id
+                User.findOne({
+                    where: {
+                        [Op.or]: [
+                            {facebookid : profile.id},
+                            {email : profile.emails[0].value},
+                          ]
+                    }
+                }) 
+                    .then((user,err) => {
+    
+                        // if there is an error, stop everything and return that
+                        // ie an error connecting to the database
+                        if (err)
+                            return done(err);
+        
+                        // if the user is found, then log them in
+                        if (user) 
+                            return done(null, user);
+                        
+                        else 
+                            // if there is no user found with that facebook id, create them
+                            User.create({
+                                facebookid: profile.id,
+                                facebooktoken: token,
+                                firstname: profile.name.givenName,
+                                lastname: profile.name.familyName,
+                                email: profile.emails[0].value,     
+                            })
+                                .then(user => {
+                                    mail(user.firstname,user.email);
+                                    return done(null, user);  
+                                })                        
+                    
                 });
             });
         }
     ));
 };
+
+
 
 const mail = function(firstname,email){
     

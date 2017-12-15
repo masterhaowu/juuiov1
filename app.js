@@ -15,6 +15,7 @@ var users = require('./routes/users');
 var logout = require('./routes/logout');
 var emailsignup = require('./routes/emailsignup');
 var emaillogin = require('./routes/emaillogin');
+var facebook = require('./routes/facebook');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use('/users', users);
 app.use('/logout', logout);
 app.use('/emailsignup', emailsignup);
 app.use('/emaillogin', emaillogin);
+app.use('/facebook', facebook);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

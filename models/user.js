@@ -1,20 +1,22 @@
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
+    facebookid: {
+      type: DataTypes.STRING,
+    },
+    facebooktoken: {
+      type: DataTypes.STRING,
+    },
     firstname: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     lastname: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   });
   return User;

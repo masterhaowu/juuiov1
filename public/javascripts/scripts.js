@@ -28,3 +28,8 @@ $(document).ready(function(){
           open = !open;       
     })
 })
+
+//alert dynamic position
+$(document).ready(function(){    
+    $('.alert').css('top', $('.navbar').outerHeight());
+})
