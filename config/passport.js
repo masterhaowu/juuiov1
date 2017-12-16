@@ -146,7 +146,7 @@ module.exports = function(passport) {
                     
                     // all is well, return successful user
                     else
-                        return done(null, user, req.flash('success', 'Log In success! ' + user.firstname + ', welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
+                        return done(null, user, req.flash('success', 'Log in success! ' + user.firstname + ', welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
                 });
             });
         }
@@ -232,7 +232,7 @@ const mail = function(firstname,email){
         let mailOptions = {
             from: 'fermi.fang@juu.io', // sender address
             to: email, // list of receivers
-            subject: 'Hello ✔', // Subject line
+            subject: 'Welcome to juu.io! ✔', // Subject line
             text: `Hello ${firstname}, welcome to juu.io!`, // plain text body
             html: `<b>Hello ${firstname}, welcome to juu.io!</b>` // html body
         };
