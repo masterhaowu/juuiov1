@@ -26,7 +26,8 @@ html
     nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-4")
       button(id="container" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
         span(class="navbar-brand pointer")
-          img(class="mr-1" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+          img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+          img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
           span(id="icon" class="fa fa-angle-down" style="color:white")
 
       //buttons that are shown in mobile and not collapsed
@@ -42,7 +43,8 @@ html
       //navbar that collapses or hidden in mobile
       div(class="collapse navbar-collapse d-md-flex" id="collapsibleNavbar")
         a(class="navbar-brand d-none d-md-block mr-auto" href="/")
-          img(class="mx-1" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+          img(class="mx-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+          img(class="mx-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
 
         //shown in non mobile - will collapse when mobile
         ul(class="navbar-nav vertical")
@@ -106,9 +108,9 @@ html
             hr(class="hr-text" data-content="or")
             form(method='POST' action='/emailsignup')
               div(class="form-group")
-                input(type="text" class="form-control" id="firstname" placeholder="First Name" name='firstname' pattern="[A-Za-z]+" title="hi" required)
+                input(type="text" class="form-control" id="firstname" placeholder="First Name" name='firstname' pattern="[A-Za-z]+" title="Firstname should only contain uppercase or lowercase letters. e.g. John" required)
               div(class="form-group")
-                input(type="text" class="form-control" id="lastname" placeholder="Last Name" name='lastname' pattern="[A-Za-z]+"  required)
+                input(type="text" class="form-control" id="lastname" placeholder="Last Name" name='lastname' pattern="[A-Za-z]+" title="Lastname should only contain uppercase or lowercase letters. e.g. Cena" required)
               div(class="form-group")
                 input(type="email" class="form-control" id="email" placeholder="Enter Email" name='email' required)
               div(class="form-group")
