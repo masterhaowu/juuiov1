@@ -83,7 +83,7 @@ module.exports = function(passport) {
                     // if there it is unique, create users
                     if (users.length > 0)
                     // return email taken
-                        return done(null, false, req.flash('signupMessage', 'That email is already taken or try logging in with facebook.'));
+                        return done(null, false, req.flash('signupMessage', 'That email may already be taken. Try logging in with facebook.'));
 
                     else  
                         User.create({
@@ -94,7 +94,7 @@ module.exports = function(passport) {
                         })
                             .then(user => {
                                 mail(user.firstname,user.email);
-                                return done(null, user, req.flash('success', 'Sign up success! ' + user.firstname + ' ,welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata                    
+                                return done(null, user, req.flash('success', 'Sign up success! ' + user.firstname + ', welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata                    
                             })
                 });    
 
@@ -146,7 +146,7 @@ module.exports = function(passport) {
                     
                     // all is well, return successful user
                     else
-                        return done(null, user, req.flash('success', 'Log In success! ' + user.firstname + ' ,welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
+                        return done(null, user, req.flash('success', 'Log In success! ' + user.firstname + ', welcome to Juu.io!')); // create the loginMessage and save it to session as flashdata
                 });
             });
         }
@@ -188,7 +188,7 @@ module.exports = function(passport) {
         
                         // if the user is found, then log them in
                         if (user) 
-                            return done(null, user);
+                                    return done(null, user);  
                         
                         else 
                             // if there is no user found with that facebook id, create them

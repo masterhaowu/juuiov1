@@ -1,25 +1,33 @@
 extends layout
 
 block content
-  div(class="wrapper")
-    div(class="header")
+  if isLoggedIn
+    div(class="wrapper")
+      div(class="header")
+        div(class="jumbotron jumbotron-fluid")
+          div(class="container")
+            h1(class="display-3") #{title}
+            p(class="lead") Welcome to #{title}
+  else 
+    div(class="wrapper")
+      div(class="header")
+        div(class="jumbotron jumbotron-fluid")
+          div(class="container")
+            h1(class="display-3") #{title}
+            p(class="lead") Welcome to #{title}
       div(class="jumbotron jumbotron-fluid")
         div(class="container")
           h1(class="display-3") #{title}
           p(class="lead") Welcome to #{title}
-    div(class="jumbotron jumbotron-fluid")
-      div(class="container")
-        h1(class="display-3") #{title}
-        p(class="lead") Welcome to #{title}
-    div(class="jumbotron jumbotron-fluid")
-      div(class="container")
-        h1(class="display-3") #{title}
-        p(class="lead") Welcome to #{title}
-    div(class="jumbotron jumbotron-fluid")
-      div(class="container")
-        h1(class="display-3") #{title}
-        p(class="lead") Welcome to #{title}
-    div(class="jumbotron jumbotron-fluid")
-      div(class="container")
-        h1(class="display-3") #{title}
-        p(class="lead") Welcome to #{title}
+      div(class="jumbotron jumbotron-fluid")
+        div(class="container")
+          h1(class="display-3") #{title}
+          p(class="lead") Welcome to #{title}
+      div(class="jumbotron jumbotron-fluid")
+        div(class="container")
+          h1(class="display-3") #{title}
+          p(class="lead") Welcome to #{title}
+      div(class="jumbotron jumbotron-fluid")
+        div(class="container")
+          h1(class="display-3") #{title}
+          p(class="lead") Welcome to #{title}
