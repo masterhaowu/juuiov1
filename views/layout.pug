@@ -23,8 +23,8 @@ html
 
   body
     //navbar
-    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none pl-2 px-sm-4")
-      button(id="container" class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
+    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-sm-4 px-0 pr-2")
+      button(id="container" class="navbar-toggler pr-0 ml-0 pl-2" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
         span(class="navbar-brand pointer mr-0")
           img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
@@ -34,7 +34,7 @@ html
       ul(class="navbar-nav d-inline d-md-none")
         if isLoggedIn
           div(class="input-group d-inline-flex d-md-none-flex pr-sm-3")
-            input(type="text" class="form-control" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
+            input(type="text" class="form-control nav-search" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
             span(class="input-group-btn")
               button(class="btn btn-primary" type="button") Go!
 
