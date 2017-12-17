@@ -1,16 +1,13 @@
 // Resetting from the mobile up!
 // 
-// Dropping the root* element font size to 14px is something
-// I do on almost all projects, a 16px font size on mobiles
-// is not normally needed. --> Only my opinion of course!
+// Drop the root* element font size to 19px
 //
-// At mobile size I used the scale "Major Second" from 
+// At mobile size use the scale "Major Second" from 
 // type-cale.com to set out the heading sizes as well as the
-// "Major Third" scale for the .display-* classes however my
-// technique was to begin the scale from the h1's front size.
-// To do this simply do the h1 font size * scale size. So in 
-// in this example it was 1.602 * 1.250 = 2.0025 I went with 
-// 2em to keep it simple.
+// "Major Third" scale for the .display-* classes h
+// begin the scale from the h1's font size.
+// To do this simply do the h1 font size * scale size. So 1.602 * 1.250 = 2.0025 
+// using 2em to keep it simple.
 //
 //------------------------------------------------------------//
 html,
@@ -50,84 +47,6 @@ h6
 .btn-mob
 	padding-left: 0
  
-
-
-// Medium devices (tablets, 48em and up)
-// 
-// At this point you have overridden Bootstraps rem's and are
-// into module based font sizes should you require it. 
-//
-// I took a while over this change because I felt that there
-// is no reason why I cant use a modified scale on another 
-// device size. So I did, the headings have now taken on
-// "Perfect Fourth" and the dislpay-* has been put to the
-// Bootstrap defaults.
-//
-//------------------------------------------------------------//
-@media only screen and (min-device-width: 320px) and (max-device-width: 359px)
-	.nav-search
-	  max-width: 185px
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 374px)
-	.nav-search
-	  max-width: 200px
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 410px)
-	.nav-search
-	  max-width: 215px
-
-@media (min-width: 48em)  
-	h1  
-	  font-size: 2.441em 
-	 
-	h2  
-		font-size: 1.953em 
-	 
-	h3  
-		font-size: 1.563em 
-	 
-	h4  
-		font-size: 1.25em 
-	 
-	.display-1  
-		font-size: 6em 
-	 
-	.display-2  
-		font-size: 5.5em 
-	 
-	.display-3  
-		font-size: 4.5em 
-	 
-	.display-4  
-		font-size: 3.5em 
-
-
-// Large devices (desktops, 62em and up)
-@media (min-width: 62em)  
-	html,
-	body  
-		font-size: 16px !important 
-	 
- 
-
-// Extra large devices (large desktops, 75em and up)
-@media (min-width: 75em)  
-	html,
-	body  
-		font-size: 18px !important 
-	 
- 
-
-// Pen Specific Styles
-.jumbotron  
-	font-size: 16px 
-	@media (min-width: 62em)  
-		font-size: 20px 
-
-
-
-
-
 //global 
 
 a:hover
@@ -215,3 +134,82 @@ input:required:valid
 
 .vertical li button
   height: 50px
+
+// Medium devices (tablets, 48em and up)
+// 
+// overridden Bootstraps rem's and are
+// into module based font sizes 
+//
+// the headings have
+// "Perfect Fourth" and the dislpay-* has been put to the
+// Bootstrap defaults.
+//
+//------------------------------------------------------------//
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px)
+	.nav-search
+	  max-width: 185px
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 374px)
+	.nav-search
+	  max-width: 200px
+
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px)
+	.nav-search
+	  max-width: 215px
+
+
+@media (min-width: 48em)  
+	h1  
+	  font-size: 2.441em 
+	 
+	h2  
+		font-size: 1.953em 
+	 
+	h3  
+		font-size: 1.563em 
+	 
+	h4  
+		font-size: 1.25em 
+	 
+	.display-1  
+		font-size: 6em 
+	 
+	.display-2  
+		font-size: 5.5em 
+	 
+	.display-3  
+		font-size: 4.5em 
+	 
+	.display-4  
+		font-size: 3.5em 
+
+
+// Large devices (desktops, 62em and up)
+@media (min-width: 62em)  
+	html,
+	body  
+		font-size: 16px !important 
+	 
+ 
+
+// Extra large devices (large desktops, 75em and up)
+@media (min-width: 75em)  
+	html,
+	body  
+		font-size: 18px !important 
+	 
+ 
+
+
+// Pen Specific Styles
+.jumbotron  
+	font-size: 16px 
+	@media (min-width: 62em)  
+		font-size: 20px 
+
+
+
+
+

@@ -35,52 +35,6 @@ h6 {
 .btn-mob {
   padding-left: 0; }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
-  .nav-search {
-    max-width: 185px; } }
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 374px) {
-  .nav-search {
-    max-width: 200px; } }
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 410px) {
-  .nav-search {
-    max-width: 215px; } }
-
-@media (min-width: 48em) {
-  h1 {
-    font-size: 2.441em; }
-  h2 {
-    font-size: 1.953em; }
-  h3 {
-    font-size: 1.563em; }
-  h4 {
-    font-size: 1.25em; }
-  .display-1 {
-    font-size: 6em; }
-  .display-2 {
-    font-size: 5.5em; }
-  .display-3 {
-    font-size: 4.5em; }
-  .display-4 {
-    font-size: 3.5em; } }
-
-@media (min-width: 62em) {
-  html,
-  body {
-    font-size: 16px !important; } }
-
-@media (min-width: 75em) {
-  html,
-  body {
-    font-size: 18px !important; } }
-
-.jumbotron {
-  font-size: 16px; }
-  @media (min-width: 62em) {
-    .jumbotron {
-      font-size: 20px; } }
-
 a:hover {
   text-decoration: none; }
 
@@ -156,5 +110,51 @@ input:required:valid {
 
 .vertical li button {
   height: 50px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
+  .nav-search {
+    max-width: 185px; } }
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 374px) {
+  .nav-search {
+    max-width: 200px; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 410px) {
+  .nav-search {
+    max-width: 215px; } }
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 2.441em; }
+  h2 {
+    font-size: 1.953em; }
+  h3 {
+    font-size: 1.563em; }
+  h4 {
+    font-size: 1.25em; }
+  .display-1 {
+    font-size: 6em; }
+  .display-2 {
+    font-size: 5.5em; }
+  .display-3 {
+    font-size: 4.5em; }
+  .display-4 {
+    font-size: 3.5em; } }
+
+@media (min-width: 62em) {
+  html,
+  body {
+    font-size: 16px !important; } }
+
+@media (min-width: 75em) {
+  html,
+  body {
+    font-size: 18px !important; } }
+
+.jumbotron {
+  font-size: 16px; }
+  @media (min-width: 62em) {
+    .jumbotron {
+      font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

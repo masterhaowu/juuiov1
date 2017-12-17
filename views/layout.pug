@@ -47,8 +47,8 @@ html
       //navbar that collapses or hidden in mobile
       div(class="collapse navbar-collapse d-md-flex" id="collapsibleNavbar")
         a(class="navbar-brand d-none d-md-block " href="/")
-          img(class="mx-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
-          img(class="mx-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
+          img(class="mx-1 nav-logo-white ml-3" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
+          img(class="mx-1 nav-logo-black ml-3" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
         if isLoggedIn
           div(class="input-group d-none d-md-inline-flex mr-auto col-lg-6")
             input(type="text" class="form-control" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
@@ -78,7 +78,7 @@ html
               a(role="button" class="btn m-1 btn-mob d-md-none ml-3 ml-sm-0" href="/logout") Log Out
             
         //hidden in mobile view
-        ul(class="navbar-nav")
+        ul(class="navbar-nav mr-2")
           if isLoggedIn
 
           else
