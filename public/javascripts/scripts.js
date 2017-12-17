@@ -42,3 +42,11 @@ $(document).ready(function(){
 $(document).ready(function(){    
     $('.alert').css('top', $('.navbar').outerHeight());
 })
+
+$(document).ready(function () {
+
+window.setTimeout(function() {
+    $(".alert").alert('close')
+}, 2000);
+
+});

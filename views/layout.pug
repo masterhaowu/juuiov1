@@ -23,18 +23,22 @@ html
 
   body
     //navbar
-    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-4")
-      button(id="container" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
-        span(class="navbar-brand pointer")
+    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none pl-2 px-sm-4")
+      button(id="container" class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
+        span(class="navbar-brand pointer mr-0")
           img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
-          span(id="icon" class="fa fa-angle-down" style="color:white")
+          span(id="icon" class="fa fa-angle-down pr-0 mr-0" style="color:white")
 
       //buttons that are shown in mobile and not collapsed
       ul(class="navbar-nav d-inline d-md-none")
         if isLoggedIn
+          div(class="input-group d-inline-flex d-md-none-flex pr-sm-3")
+            input(type="text" class="form-control" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
+            span(class="input-group-btn")
+              button(class="btn btn-primary" type="button") Go!
 
-        else      
+        else
           li(class="nav-item d-inline")
             button(type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#signUpModal") Sign Up
           li(class="nav-item d-inline")
@@ -42,12 +46,17 @@ html
 
       //navbar that collapses or hidden in mobile
       div(class="collapse navbar-collapse d-md-flex" id="collapsibleNavbar")
-        a(class="navbar-brand d-none d-md-block mr-auto" href="/")
+        a(class="navbar-brand d-none d-md-block " href="/")
           img(class="mx-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mx-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
+        if isLoggedIn
+          div(class="input-group d-none d-md-inline-flex mr-auto col-lg-6")
+            input(type="text" class="form-control" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
+            span(class="input-group-btn")
+              button(class="btn btn-primary" type="button") Go!
 
         //shown in non mobile - will collapse when mobile
-        ul(class="navbar-nav vertical")
+        ul(class="navbar-nav vertical ml-auto")
           li(class="nav-item")
             br(class="d-inline d-md-none") 
 
@@ -160,6 +169,52 @@ html
             span Don't have an account?
             button(type="button" class="btn btn-link align-baseline" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal" ) sign up
 
+    //Settings modal
+    div(class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") Settings
+            br
+            form(method='POST' action='/language')            
+              div(class="form-group")
+                  select(class="form-control" id="language")
+                    option English               
+                    option 中文
+            form(method='POST' action='/currency')            
+              div(class="form-group")
+                  select(class="form-control" id="currency")
+                    option USD               
+                    option HKD
+                    option NTD
+
+    //help modal
+    div(class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") Help
+            br
+            p This is going to be the help section. There may be a search function to query out FAQ articles that answer questions customers may have. Maybe there could also be live chat here.
+
+    //user profile modal
+    div(class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="userProfileModalLabel" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") User Profile
+            br
+
+  //the flash messages
   if (messages) 
     if (messages.success)
         div.alert.alert-success.alert-dismissable.fade.show= messages.success
