@@ -42,7 +42,9 @@ h6 {
   margin: auto; }
 
 .col-sm {
-  text-align: center; }
+  text-align: center;
+  background-color: red;
+  margin: 5vh; }
 
 a:hover {
   text-decoration: none; }
@@ -132,8 +134,7 @@ input:required:valid {
   height: 40vh; }
 
 .section-2 {
-  background-color: black;
-  height: 65vh; }
+  background-color: black; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .nav-search {
@@ -179,7 +180,6 @@ input:required:valid {
     html .section-2,
     body .section-2 {
       background-color: black;
-      height: auto;
       padding: 10vh; } }
 
 @media (min-width: 75em) {
