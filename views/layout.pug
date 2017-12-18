@@ -11,9 +11,6 @@ html
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous")
     link(rel='stylesheet' href='/stylesheets/style.css')
-    //link(rel="stylesheet" media="screen and (min-device-width: 800px)" href="800.css")
-    //link(rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='css/medium.css')
-    //link(rel="stylesheet" media="only screen and (color)" href="/stylesheets/style.css")
 
     //javascripts
     script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
@@ -60,21 +57,21 @@ html
           li(class="nav-item")
             br(class="d-inline d-md-none") 
 
-          li(class="nav-item ml-3 ml-sm-0")
+          li(class="nav-item ml-3 ml-sm-0 d-inline-block")
             button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="modal" data-target="#settingsModal") Settings
           if isLoggedIn
-            li(class="nav-item ml-3 ml-sm-0")
+            li(class="nav-item ml-3 ml-sm-0 d-inline-block")
               button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="modal" data-target="#helpModal") Help 
-            li(class="nav-item dropdown d-none d-md-block ml-3 ml-sm-0")
-              button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="dropdown") Signed in as #{user.firstname} <img src="https://ui-avatars.com/api/?name=#{user.firstname}+#{user.lastname}&background=CCCCCC&color=FFFFFF&rounded=true&size=38"> 
+            li(class="nav-item dropdown d-none d-md-inline-block ml-3 ml-sm-0")
+              button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="dropdown" ) Signed in as #{user.firstname} 
               ul.dropdown-menu
                 li(class="nav-item")
                   button(type="button" class="btn btn-link m-1" data-toggle="modal" data-target="#userProfileModal") User Profile
                 li(class="nav-item")
                   a(role="button" class="btn btn-link m-1" href="/logout") Log Out
-            li(class="nav-item ml-3 ml-sm-0")
+            li(class="nav-item ml-3 ml-sm-0 d-inline-block")
               button(type="button" class="btn btn-link m-1 btn-mob d-md-none" data-toggle="modal" data-target="#userProfileModal") User Profile
-            li(class="nav-item ml-3 ml-sm-0")
+            li(class="nav-item ml-3 ml-sm-0 d-inline-block")
               a(role="button" class="btn m-1 btn-mob d-md-none" href="/logout") Log Out
             
         //hidden in mobile view
@@ -123,7 +120,7 @@ html
               div(class="form-group")
                 input(type="email" class="form-control" id="email" placeholder="Enter Email" name='email' required)
               div(class="form-group")
-                input(type="password" class="form-control" id="password" placeholder="Password" name='password' required)            
+                input(type="password" class="form-control" id="password" placeholder="Password" name='password' pattern=".{8,}" title="Password should contain 8 characters minimum" required)            
               button(type="submit" class="btn btn-primary btn-lg btn-block") sign up
             span I have read and agree with the following <br> <button(type="button" class="btn btn-link" data-toggle="modal" data-target="#termsAndConditionsModal" data-dismiss="modal">terms and conditions</button>
             hr(class="hr-text")
@@ -212,6 +209,39 @@ html
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
             h4(style="color:#007bff") User Profile
+            br
+
+    //forgot your password modal
+    div(class="modal fade" id="forgotYourPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotYourPasswordModal" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") Forgot Your Password
+            br
+
+    //Reset your password modal
+    div(class="modal fade" id="resetYourPasswordModal" tabindex="-1" role="dialog" aria-labelledby="resetYourPasswordModal" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") Reset Your Password
+            br
+
+    //terms and conditions modal
+    div(class="modal fade" id="termsAndConditionsModal" tabindex="-1" role="dialog" aria-labelledby="termsAndConditionsModal" aria-hidden="true")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#007bff") Terms and Conditions
             br
 
   //the flash messages

@@ -12,7 +12,8 @@
 //------------------------------------------------------------//
 html,
 body 
-	font-size: 19px !important 
+	font-size: 19px !important
+
 
 h1  
 	font-size: 1.602em 
@@ -49,6 +50,15 @@ h6
  
 //global 
 
+.container-fluid 
+  padding: 0
+  
+.row
+  margin: auto
+
+.col-sm
+  text-align: center
+  
 a:hover
   text-decoration: none
 		//navbar
@@ -72,8 +82,6 @@ a:hover
 
 .nav-logo-white
   transition: all 0.5s
-
-
 
 .btn:hover
   cursor: pointer
@@ -124,6 +132,9 @@ a:hover
 .modal-body
   overflow-y: auto
 
+.modal-footer
+  border-style: none
+
 .alert
   z-index: 99999
   position: fixed
@@ -135,16 +146,20 @@ input:required:valid
 .vertical li button
   height: 50px
 
-// Medium devices (tablets, 48em and up)
-// 
-// overridden Bootstraps rem's and are
-// into module based font sizes 
-//
-// the headings have
-// "Perfect Fourth" and the dislpay-* has been put to the
-// Bootstrap defaults.
-//
-//------------------------------------------------------------//
+.jumbotron
+  background-image:url('jumbotron.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  height: 55vh
+
+.section-1
+  height: 40vh
+
+.section-2
+  background-color: black
+  height: 65vh
+
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) //iphone 5
 	.nav-search
 	  max-width: 180px
@@ -159,7 +174,16 @@ input:required:valid
 	.nav-search
 	  max-width: 215px
 
-
+// Medium devices (tablets, 48em and up)
+// 
+// overridden Bootstraps rem's and are
+// into module based font sizes 
+//
+// the headings have
+// "Perfect Fourth" and the dislpay-* has been put to the
+// Bootstrap defaults.
+//
+//------------------------------------------------------------//
 @media (min-width: 48em)  
 	h1  
 	  font-size: 2.441em 
@@ -186,19 +210,30 @@ input:required:valid
 		font-size: 3.5em 
 
 
+
 // Large devices (desktops, 62em and up)
 @media (min-width: 62em)  
 	html,
 	body  
-		font-size: 16px !important 
+		font-size: 21px !important 
 	 
- 
+  .jumbotron
+    height: 80vh 
+    padding: 10vw
+
+  .section-1
+    height: 40vh
+
+  .section-2
+    background-color: black
+    height: auto
+    padding: 10vh
 
 // Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em)  
 	html,
 	body  
-		font-size: 18px !important 
+		font-size: 23px !important 
 	 
  
 

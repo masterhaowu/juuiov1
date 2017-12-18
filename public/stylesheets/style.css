@@ -35,6 +35,15 @@ h6 {
 .btn-mob {
   padding-left: 0; }
 
+.container-fluid {
+  padding: 0; }
+
+.row {
+  margin: auto; }
+
+.col-sm {
+  text-align: center; }
+
 a:hover {
   text-decoration: none; }
 
@@ -100,6 +109,9 @@ a:hover {
 .modal-body {
   overflow-y: auto; }
 
+.modal-footer {
+  border-style: none; }
+
 .alert {
   z-index: 99999;
   position: fixed;
@@ -110,6 +122,18 @@ input:required:valid {
 
 .vertical li button {
   height: 50px; }
+
+.jumbotron {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 55vh; }
+
+.section-1 {
+  height: 40vh; }
+
+.section-2 {
+  background-color: black;
+  height: 65vh; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .nav-search {
@@ -144,12 +168,24 @@ input:required:valid {
 @media (min-width: 62em) {
   html,
   body {
-    font-size: 16px !important; } }
+    font-size: 21px !important; }
+    html .jumbotron,
+    body .jumbotron {
+      height: 80vh;
+      padding: 10vw; }
+    html .section-1,
+    body .section-1 {
+      height: 40vh; }
+    html .section-2,
+    body .section-2 {
+      background-color: black;
+      height: auto;
+      padding: 10vh; } }
 
 @media (min-width: 75em) {
   html,
   body {
-    font-size: 18px !important; } }
+    font-size: 23px !important; } }
 
 .jumbotron {
   font-size: 16px; }

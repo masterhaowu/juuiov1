@@ -24,26 +24,29 @@ block content
         div(class="container")
           h1(class="display-3") #{title}
           p(class="lead") Welcome #{user.firstname}
+
   else 
-    div(class="wrapper")
+    div(class="container-fluid")
       div(class="header")
         div(class="jumbotron jumbotron-fluid")
           div(class="container")
             h1(class="display-3") #{title}
             p(class="lead") Welcome to #{title}
-      div(class="jumbotron jumbotron-fluid")
-        div(class="container")
-          h1(class="display-3") #{title}
-          p(class="lead") Welcome to #{title}
-      div(class="jumbotron jumbotron-fluid")
-        div(class="container")
-          h1(class="display-3") #{title}
-          p(class="lead") Welcome to #{title}
-      div(class="jumbotron jumbotron-fluid")
-        div(class="container")
-          h1(class="display-3") #{title}
-          p(class="lead") Welcome to #{title}
-      div(class="jumbotron jumbotron-fluid")
-        div(class="container")
-          h1(class="display-3") #{title}
-          p(class="lead") Welcome to #{title}
+
+    div(class="container-fluid")
+      div(class="row section-1")
+
+    div(class="container-fluid")
+      div(class="row section-2")
+        div(class="col-sm")
+          br
+          br
+          p One of three columns
+        div(class="col-sm")
+          br
+          br
+          p One of three columns
+        div(class="col-sm")
+          br
+          br
+          p One of three columns
