@@ -78,6 +78,9 @@ a:hover
 .nav-logo-black
   display: none
 
+#icon
+  color: white
+
 .nav-logo-black
   transition: all 0.5s
 
@@ -130,9 +133,6 @@ a:hover
 .modal-header
   border-style: none
 
-.modal-body
-  overflow-y: auto
-
 .modal-footer
   border-style: none
 
@@ -148,10 +148,15 @@ input:required:valid
   height: 50px
 
 .jumbotron
-  background-image:url('jumbotron.jpg')
-  background-repeat: no-repeat
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url("/images/index_bg_1.jpg") no-repeat center
   background-size: cover
+  color: white
   height: 55vh
+  padding: 5vh
+
+
+
+
 
 .section-1
   height: 40vh
@@ -209,6 +214,7 @@ input:required:valid
 	.display-4  
 		font-size: 3.5em 
 
+  .jumbotron
 
 
 // Large devices (desktops, 62em and up)
@@ -239,9 +245,9 @@ input:required:valid
 
 // Pen Specific Styles
 .jumbotron  
-	font-size: 16px 
+	font-size: 21px 
 	@media (min-width: 62em)  
-		font-size: 20px 
+		font-size: 23px 
 
 
 

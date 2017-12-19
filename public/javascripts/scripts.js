@@ -1,6 +1,3 @@
-//navbar color change on scroll
-
-
 //set position top
 $(document).ready(function(){
     $(this).scrollTop(0);

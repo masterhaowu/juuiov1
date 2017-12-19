@@ -28,7 +28,7 @@ html
         span(class="navbar-brand pointer mr-0")
           img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
-          span(id="icon" class="fa fa-angle-down pr-0 mr-0" style="color:white")
+          span(id="icon" class="fa fa-angle-down pr-0 mr-0")
 
       //buttons that are shown in mobile and not collapsed
       ul(class="navbar-nav d-inline d-md-none")
@@ -91,7 +91,7 @@ html
 
 
     //Sign Up Modal
-    div(class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    div(class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true")
       div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
@@ -100,20 +100,21 @@ html
           div(class="modal-body" style="text-align:center")
             a(role="button" class="btn btn-primary btn-lg btn-block" href="/facebook") sign up with facebook
             hr(class="hr-text" data-content="or")
-            button(type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#signUpEmailModal" data-dismiss="modal") sign up with email
+            button(type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="$('#signUpModal').one('hidden.bs.modal', function() { $('#signUpEmailModal').modal('show'); }).modal('hide');") sign up with email
             hr(class="hr-text")
             span Already have an account? <br>
-            button(type="button" class="btn btn-link" data-toggle="modal" data-target="#logInModal" data-dismiss="modal") log in
+            button(type="button" class="btn btn-link" onclick="$('#signUpModal').one('hidden.bs.modal', function() { $('#logInModal').modal('show'); }).modal('hide');") log in
+
 
     //Email Sign Up modal
-    div(class="modal fade" id="signUpEmailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
-      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+    div(class="modal fade" id="signUpEmailModal" tabindex="-1" role="dialog" aria-labelledby="signUpEmailModal" aria-hidden="true")
+      div(class="modal-dialog d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            span Sign up with <a href="#">facebook</a>
+            span Sign up with <a href="/facebook">facebook</a>
             hr(class="hr-text" data-content="or")
             form(method='POST' action='/emailsignup')
               div(class="form-group")
@@ -125,14 +126,14 @@ html
               div(class="form-group")
                 input(type="password" class="form-control" id="password" placeholder="Password" name='password' pattern=".{8,}" title="Password should contain 8 characters minimum" required)            
               button(type="submit" class="btn btn-primary btn-lg btn-block") sign up
-            span I have read and agree with the following <br> <button(type="button" class="btn btn-link" data-toggle="modal" data-target="#termsAndConditionsModal" data-dismiss="modal">terms and conditions</button>
+            span I have read and agree with the following <br> <button(type="button" class="btn btn-link" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#termsAndConditionsModal').modal('show'); }).modal('hide');">terms and conditions</button>
+            
             hr(class="hr-text")
             span Already have an account?
-            button(type="button" class="btn btn-link align-baseline" data-toggle="modal" data-target="#logInModal" data-dismiss="modal") log in
-            
+            button(type="button" class="btn btn-link align-baseline" style="margin: 0; padding: 0 10px" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#logInModal').modal('show'); }).modal('hide');") log in
 
     //Log In modal
-    div(class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    div(class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModal" aria-hidden="true")
       div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
@@ -141,14 +142,14 @@ html
           div(class="modal-body" style="text-align:center")
             a(role="button" class="btn btn-primary btn-lg btn-block" href="/facebook") log in with facebook
             hr(class="hr-text" data-content="or")
-            button(type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#logInEmailModal" data-dismiss="modal") log in with email
+            button(type="button" class="btn btn-outline-primary btn-lg btn-block" onclick="$('#logInModal').one('hidden.bs.modal', function() { $('#logInEmailModal').modal('show'); }).modal('hide');") log in with email            
             hr(class="hr-text")
             span Don't have an account? <br>
-            button(type="button" class="btn btn-link" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal" ) sign up
+            button(type="button" class="btn btn-link" onclick="$('#logInModal').one('hidden.bs.modal', function() { $('#signUpModal').modal('show'); }).modal('hide');") sign up
 
     //Email Log In modal
-    div(class="modal fade" id="logInEmailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
-      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+    div(class="modal fade" id="logInEmailModal" tabindex="-1" role="dialog" aria-labelledby="logInEmailModal" aria-hidden="true")
+      div(class="modal-dialog d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
@@ -162,15 +163,16 @@ html
               div(class="form-group")
                 input(type="password" class="form-control" id="password" placeholder="Password" name="password" required)
               button(type="submit" class="btn btn-primary btn-lg btn-block") log in
-            button(type="button" class="btn btn-link" data-toggle="modal" data-target="#forgotYourPasswordModal" data-dismiss="modal") forgot your password?
+            button(type="button" class="btn btn-link" onclick="$('#logInEmailModal').one('hidden.bs.modal', function() { $('#forgotYourPasswordModal').modal('show'); }).modal('hide');") forgot your password?
+            
             hr(class="hr-text" data-content="or")
-            button(type="button" class="btn btn-outline-primary btn-lg btn-block" data-dismiss="modal" data-toggle="modal" data-target="#logInFacebookModal") log in with facebook
+            a(role="button" class="btn btn-outline-primary btn-lg btn-block" href="/facebook") log in with facebook
             hr(class="hr-text")
             span Don't have an account?
-            button(type="button" class="btn btn-link align-baseline" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal" ) sign up
+            button(type="button" class="btn btn-link align-baseline" style="margin: 0; padding: 0 10px" onclick="$('#logInEmailModal').one('hidden.bs.modal', function() { $('#signUpModal').modal('show'); }).modal('hide');") sign up
 
     //Settings modal
-    div(class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    div(class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModal" aria-hidden="true")
       div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")

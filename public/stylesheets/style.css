@@ -63,6 +63,9 @@ a:hover {
 .nav-logo-black {
   display: none; }
 
+#icon {
+  color: white; }
+
 .nav-logo-black {
   transition: all 0.5s; }
 
@@ -108,9 +111,6 @@ a:hover {
 .modal-header {
   border-style: none; }
 
-.modal-body {
-  overflow-y: auto; }
-
 .modal-footer {
   border-style: none; }
 
@@ -126,9 +126,11 @@ input:required:valid {
   height: 50px; }
 
 .jumbotron {
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/index_bg_1.jpg") no-repeat center;
   background-size: cover;
-  height: 55vh; }
+  color: white;
+  height: 55vh;
+  padding: 5vh; }
 
 .section-1 {
   height: 40vh; }
@@ -188,9 +190,9 @@ input:required:valid {
     font-size: 23px !important; } }
 
 .jumbotron {
-  font-size: 16px; }
+  font-size: 21px; }
   @media (min-width: 62em) {
     .jumbotron {
-      font-size: 20px; } }
+      font-size: 23px; } }
 
 /*# sourceMappingURL=style.css.map */
