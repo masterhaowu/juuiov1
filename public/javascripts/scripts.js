@@ -1,3 +1,4 @@
+var open = false;
 //set position top
 $(document).ready(function(){
     $(this).scrollTop(0);
@@ -6,12 +7,13 @@ $(document).ready(function(){
 
 //navbar button angle turn when clicked
 $(document).ready(function(){
-    var open = false;
+
     $(".navbar-toggler").click(function(){
         if(open){
-            icon.className = 'fa fa-angle-down';  
+            icon.className = 'fa fa-angle-down';
           } else{
             icon.className = 'fa fa-angle-down open';
+
           }          
           open = !open;       
     })

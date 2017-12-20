@@ -1,6 +1,136 @@
-// Resetting from the mobile up!
+//global sizing (non-size affecting)
+
+//Buttons and Links Styling
+
+
+a:hover
+  text-decoration: none
+
+.btn:hover
+  cursor: pointer
+
+.pointer:hover
+  cursor: pointer
+
+.btn-link:hover
+  text-decoration: none
+
+
+//Div Styling
+.jumbotron
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url("/images/index_bg_1.jpg") no-repeat center
+  background-size: cover
+  color: white
+
+.section-1
+
+.section-2
+  background-color: black
+  
+.container-fluid 
+  padding: 0
+  background-color: purple
+
+.container
+  padding: 0 auto 
+  margin: 0 auto 
+  background-color: blue
+
+.row
+  margin: auto
+  background-color: green
+
+.col-sm
+  text-align: center
+  background-color: red
+  margin: 5vh
+
+
+//Navbar Styling
+.navbar
+  transition: all 0.5s
+
+.fa-angle-down
+  transform: rotate(0deg)
+  transition: transform .25s linear
+
+.fa-angle-down.open
+  transform: rotate(-180deg)
+  transition: transform .25s linear
+
+#icon
+  color: white
+
+.nav-logo-black
+  transition: all 0.5s
+  display: none
+
+.nav-logo-white
+  transition: all 0.5s
+
+.nav-btn-mob
+	padding-left: 0
+
+
+//Modals
+.hr-text 
+  line-height: 1em
+  position: relative
+  outline: 0
+  border: 0
+  color: black 
+  text-align: center 
+  height: 1.5em 
+  opacity: .5 
+  &:before  
+    content: '' 
+    background-color: #000000 
+    position: absolute 
+    left: 0 
+    top: 50% 
+    width: 100% 
+    height: 1px 
+  &:after  
+    content: attr(data-content) 
+    position: relative 
+    display: inline-block 
+    color: black 
+    padding: 0 .5em 
+    line-height: 1.5em 
+    color: #818078 
+    background-color: #ffffff 
+   
+.modal-header
+  border-style: none
+
+.modal-open
+  position: absolute
+  width: 100%  
+
+.modal-footer
+  border-style: none
+
+.alert
+  z-index: 99999
+  position: fixed
+  width: 100%
+
+input:required:valid
+  border-color: #28a745
+
+
+
+
+
+
+//footer
+
+
+
+// Small devices (mobile, 48em and lower)
 // 
-// Drop the root* element font size to 19px
+// Resetting from the mobile up
+// Set the root* element font size to 17px
 //
 // At mobile size use the scale "Major Second" from 
 // type-cale.com to set out the heading sizes as well as the
@@ -10,9 +140,11 @@
 // using 2em to keep it simple.
 //
 //------------------------------------------------------------//
+
+//Text Styling
 html,
 body 
-	font-size: 19px !important
+	font-size: 17px !important
 
 h1  
 	font-size: 1.602em 
@@ -44,131 +176,10 @@ h6
 .display-4  
 	font-size: 2em 
 
-.btn-mob
-	padding-left: 0
- 
-//global 
-
-.container-fluid 
-  padding: 0
-
-.container
-  padding: 0 auto 
-  margin: 0 auto 
-
-.row
-  margin: auto
-
-.col-sm
-  text-align: center
-  background-color: red
-  margin: 5vh
-  
-a:hover
-  text-decoration: none
-		//navbar
-.navbar
-  transition: all 0.5s
-
-.fa-angle-down
-  transform: rotate(0deg)
-  transition: transform .25s linear
-
-
-.fa-angle-down.open
-  transform: rotate(-180deg)
-  transition: transform .25s linear
-
-.nav-logo-black
-  display: none
-
-#icon
-  color: white
-
-.nav-logo-black
-  transition: all 0.5s
-
-.nav-logo-white
-  transition: all 0.5s
-
-.btn:hover
-  cursor: pointer
-
-.pointer:hover
-  cursor: pointer
-
-.btn-link:hover
-  text-decoration: none
-
-		//modals
-
-.hr-text 
-  line-height: 1em
-  position: relative
-  outline: 0
-  border: 0
-  color: black 
-  text-align: center 
-  height: 1.5em 
-  opacity: .5 
-  &:before  
-    content: '' 
-    // use the linear-gradient for the fading effect
-    // use a solid background color for a solid bar
-    background-color: #000000 
-    position: absolute 
-    left: 0 
-    top: 50% 
-    width: 100% 
-    height: 1px 
-   
-  &:after  
-    content: attr(data-content) 
-    position: relative 
-    display: inline-block 
-    color: black 
-
-    padding: 0 .5em 
-    line-height: 1.5em 
-    // this is really the only tricky part, you need to specify the background color of the container element...
-    color: #818078 
-    background-color: #ffffff 
-   
-.modal-header
-  border-style: none
-
-  
-
-.modal-footer
-  border-style: none
-
-.alert
-  z-index: 99999
-  position: fixed
-  width: 100%
-
-input:required:valid
-  border-color: #28a745
-
-.vertical li button
-  height: 50px
-
 .jumbotron
-  background: linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url("/images/index_bg_1.jpg") no-repeat center
-  background-size: cover
-  color: white
   height: 55vh
-  padding: 5vh
-
-
-
-
-
-.section-1
-  height: 40vh
-
-.section-2
-  background-color: black
+  padding: 20vh 10vw
+  margin: 0 auto
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) //iphone 5
@@ -184,6 +195,7 @@ input:required:valid
 @media only screen and (min-device-width: 375px) and (max-device-width: 410px) //iphone 6
 	.nav-search
 	  max-width: 215px
+
 
 // Medium devices (tablets, 48em and up)
 // 
@@ -206,8 +218,8 @@ input:required:valid
 		font-size: 1.563em 
 	 
 	h4  
-		font-size: 1.25em 
-	 
+		font-size: 1.25em
+	
 	.display-1  
 		font-size: 6em 
 	 
@@ -219,19 +231,19 @@ input:required:valid
 	 
 	.display-4  
 		font-size: 3.5em 
-
-  .jumbotron
-
+   
+	.jumbotron  
+    padding: 25vh 10vw
 
 // Large devices (desktops, 62em and up)
 @media (min-width: 62em)  
 	html,
 	body  
-		font-size: 21px !important 
+		font-size: 19px !important 
 	 
   .jumbotron
     height: 80vh 
-    padding: 10vw
+    padding: 25vh 10vw
 
   .section-1
     height: 40vh
@@ -244,16 +256,13 @@ input:required:valid
 @media (min-width: 75em)  
 	html,
 	body  
-		font-size: 23px !important 
+		font-size: 21px !important 
 	 
  
 
 
-// Pen Specific Styles
-.jumbotron  
-	font-size: 21px 
-	@media (min-width: 62em)  
-		font-size: 23px 
+
+
 
 
 

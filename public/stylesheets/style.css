@@ -1,57 +1,40 @@
-html,
-body {
-  font-size: 19px !important; }
+a:hover {
+  text-decoration: none; }
 
-h1 {
-  font-size: 1.602em; }
+.btn:hover {
+  cursor: pointer; }
 
-h2 {
-  font-size: 1.424em; }
+.pointer:hover {
+  cursor: pointer; }
 
-h3 {
-  font-size: 1.266em; }
+.btn-link:hover {
+  text-decoration: none; }
 
-h4 {
-  font-size: 1.125em; }
+.jumbotron {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/index_bg_1.jpg") no-repeat center;
+  background-size: cover;
+  color: white; }
 
-h5 {
-  font-size: 0.889em; }
-
-h6 {
-  font-size: 0.79em; }
-
-.display-1 {
-  font-size: 3.906em; }
-
-.display-2 {
-  font-size: 3.125em; }
-
-.display-3 {
-  font-size: 2.5em; }
-
-.display-4 {
-  font-size: 2em; }
-
-.btn-mob {
-  padding-left: 0; }
+.section-2 {
+  background-color: black; }
 
 .container-fluid {
-  padding: 0; }
+  padding: 0;
+  background-color: purple; }
 
 .container {
   padding: 0 auto;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: blue; }
 
 .row {
-  margin: auto; }
+  margin: auto;
+  background-color: green; }
 
 .col-sm {
   text-align: center;
   background-color: red;
   margin: 5vh; }
-
-a:hover {
-  text-decoration: none; }
 
 .navbar {
   transition: all 0.5s; }
@@ -64,26 +47,18 @@ a:hover {
   transform: rotate(-180deg);
   transition: transform .25s linear; }
 
-.nav-logo-black {
-  display: none; }
-
 #icon {
   color: white; }
 
 .nav-logo-black {
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  display: none; }
 
 .nav-logo-white {
   transition: all 0.5s; }
 
-.btn:hover {
-  cursor: pointer; }
-
-.pointer:hover {
-  cursor: pointer; }
-
-.btn-link:hover {
-  text-decoration: none; }
+.nav-btn-mob {
+  padding-left: 0; }
 
 .hr-text {
   line-height: 1em;
@@ -115,6 +90,10 @@ a:hover {
 .modal-header {
   border-style: none; }
 
+.modal-open {
+  position: absolute;
+  width: 100%; }
+
 .modal-footer {
   border-style: none; }
 
@@ -126,21 +105,44 @@ a:hover {
 input:required:valid {
   border-color: #28a745; }
 
-.vertical li button {
-  height: 50px; }
+html,
+body {
+  font-size: 17px !important; }
+
+h1 {
+  font-size: 1.602em; }
+
+h2 {
+  font-size: 1.424em; }
+
+h3 {
+  font-size: 1.266em; }
+
+h4 {
+  font-size: 1.125em; }
+
+h5 {
+  font-size: 0.889em; }
+
+h6 {
+  font-size: 0.79em; }
+
+.display-1 {
+  font-size: 3.906em; }
+
+.display-2 {
+  font-size: 3.125em; }
+
+.display-3 {
+  font-size: 2.5em; }
+
+.display-4 {
+  font-size: 2em; }
 
 .jumbotron {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/index_bg_1.jpg") no-repeat center;
-  background-size: cover;
-  color: white;
   height: 55vh;
-  padding: 5vh; }
-
-.section-1 {
-  height: 40vh; }
-
-.section-2 {
-  background-color: black; }
+  padding: 20vh 10vw;
+  margin: 0 auto; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .nav-search {
@@ -170,16 +172,18 @@ input:required:valid {
   .display-3 {
     font-size: 4.5em; }
   .display-4 {
-    font-size: 3.5em; } }
+    font-size: 3.5em; }
+  .jumbotron {
+    padding: 25vh 10vw; } }
 
 @media (min-width: 62em) {
   html,
   body {
-    font-size: 21px !important; }
+    font-size: 19px !important; }
     html .jumbotron,
     body .jumbotron {
       height: 80vh;
-      padding: 10vw; }
+      padding: 25vh 10vw; }
     html .section-1,
     body .section-1 {
       height: 40vh; }
@@ -191,12 +195,6 @@ input:required:valid {
 @media (min-width: 75em) {
   html,
   body {
-    font-size: 23px !important; } }
-
-.jumbotron {
-  font-size: 21px; }
-  @media (min-width: 62em) {
-    .jumbotron {
-      font-size: 23px; } }
+    font-size: 21px !important; } }
 
 /*# sourceMappingURL=style.css.map */

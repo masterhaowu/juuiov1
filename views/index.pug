@@ -1,28 +1,8 @@
 extends layout
 
-block misc
-  if isLoggedIn
-
-  else
-      script.
-        //navbar change color when clicked if on index and not loggedin
-        $(document).ready(function(){
-            var open = false;
-            $(".navbar-toggler").click(function(){
-                if(open){
-                    icon.className = 'fa fa-angle-down';  
-
-                  } else{
-                    icon.className = 'fa fa-angle-down open';
-                  }          
-                  open = !open;       
-            })
-        })      
-
 block content
   if isLoggedIn
-    div(class="wrapper")
-      div(class="header" style="")
+
 
     div(class="container-fluid")
       div(class="row section-1")
@@ -50,17 +30,16 @@ block content
 
   else 
     div(class="container-fluid")
-      div(class="header")
-        div(class="jumbotron jumbotron-fluid")
-          div(class="container")
-            h1(class="display-2") juu.io
-            p(class="lead") Stop wasting time <br> on property listings
+      div(class="jumbotron jumbotron-fluid")
+        div(class="container")
+          h1(class="display-4") Stop wasting time <br> on property <br> listings
 
     div(class="container-fluid")
       div(class="row section-1")
-          div(class="col-sm ")       
-            p(class="lead") Simultaneously list your property <br> on all platforms
-            button(class="btn btn-primary") sign up
+        div(class="col-sm")       
+          p(class="lead") Simultaneously list your property <br> on all platforms
+          button(class="btn btn-primary") sign up
+          button(class="btn btn-link") pricing
    
 
     div(class="container-fluid")

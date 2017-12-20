@@ -6,6 +6,10 @@ html
     //meta data
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="List homes for sale or for rent. Both owners and agents can use juu.io to find tenants or buyers faster.")
+
+    //fb
+
 
     //css
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous")
@@ -17,9 +21,6 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous")
     script(src="/javascripts/scripts.js")
-
-    //Other Pages misc
-    block misc
 
     if isLoggedIn
       style(type='text/css').
@@ -43,30 +44,29 @@ html
         //navbar color change on scroll
         $(document).ready(function(){
           $(window).scroll(function(){
-              if($(window).scrollTop() + $(".navbar").outerHeight() > $(".header").height()){
-                  $(".navbar").css({"background-color":"white"});
-                  $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
-                  $("#icon").css({"color":"black"});               
-                  $(".nav-logo-white").css({"display":"none"})
-                  $(".nav-logo-black").css({"display":"inline"})      
-              }
-              else{
-                  $(".navbar").css({"background-color":"transparent"});
-                  $(".navbar").css({"box-shadow":"none"});
-                  $("#icon").css({"color":"white"});
-                  $(".nav-logo-white").css({"display":"inline"})     
-                  $(".nav-logo-black").css({"display":"none"}) 
-                  
-              }
+            if($(window).scrollTop() + $(".navbar").outerHeight() > $(".jumbotron").outerHeight()){
+                $(".navbar").css({"background-color":"white"});
+                $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
+                $("#icon").css({"color":"black"});               
+                $(".nav-logo-white").css({"display":"none"})
+                $(".nav-logo-black").css({"display":"inline"})      
+            }
+            else{
+                $(".navbar").css({"background-color":"transparent"});
+                $(".navbar").css({"box-shadow":"none"});
+                $("#icon").css({"color":"white"});
+                $(".nav-logo-white").css({"display":"inline"})     
+                $(".nav-logo-black").css({"display":"none"}) 
+            }
           })
         })
-
+      
 
   body
     //navbar
-    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-sm-4 px-0 pr-2")
-      button(id="container" class="navbar-toggler pr-0 ml-0 pl-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
-        span(class="navbar-brand pointer mr-0")
+    nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-0 px-sm-4 pr-2")
+      button(class="navbar-toggler pl-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" style="border-style:none")
+        span(class="navbar-brand pointer mx-0")
           img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
           span(id="icon" class="fa fa-angle-down pr-0 mr-0")
@@ -102,21 +102,21 @@ html
             br(class="d-inline d-md-none") 
 
           li(class="nav-item ml-3 ml-sm-0 d-inline-block")
-            button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="modal" data-target="#settingsModal") Settings
+            button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="modal" data-target="#settingsModal") Settings
           if isLoggedIn
             li(class="nav-item ml-3 ml-sm-0 d-inline-block")
-              button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="modal" data-target="#helpModal") Help 
+              button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="modal" data-target="#helpModal") Help 
             li(class="nav-item dropdown d-none d-md-inline-block ml-3 ml-sm-0")
-              button(type="button" class="btn btn-link m-1 btn-mob" data-toggle="dropdown" ) Signed in as #{user.firstname} 
+              button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="dropdown" ) Signed in as #{user.firstname} 
               ul.dropdown-menu
                 li(class="nav-item")
                   button(type="button" class="btn btn-link m-1" data-toggle="modal" data-target="#userProfileModal") User Profile
                 li(class="nav-item")
                   a(role="button" class="btn btn-link m-1" href="/logout") Log Out
             li(class="nav-item ml-3 ml-sm-0 d-inline-block")
-              button(type="button" class="btn btn-link m-1 btn-mob d-md-none" data-toggle="modal" data-target="#userProfileModal") User Profile
+              button(type="button" class="btn btn-link m-1 nav-btn-mob d-md-none" data-toggle="modal" data-target="#userProfileModal") User Profile
             li(class="nav-item ml-3 ml-sm-0 d-inline-block")
-              a(role="button" class="btn m-1 btn-mob d-md-none" href="/logout") Log Out
+              a(role="button" class="btn m-1 nav-btn-mob d-md-none" href="/logout") Log Out
             
         //hidden in mobile view
         ul(class="navbar-nav mr-2")
@@ -127,8 +127,6 @@ html
               button(type="button" class="btn btn-primary m-1 d-none d-md-block" data-toggle="modal" data-target="#signUpModal") Sign Up
             li(class="nav-item")
               button(type="button" class="btn btn-outline-primary m-1 d-none d-md-block" data-toggle="modal" data-target="#logInModal") Log In
-
-
 
 
     //Sign Up Modal
@@ -149,7 +147,7 @@ html
 
     //Email Sign Up modal
     div(class="modal fade" id="signUpEmailModal" tabindex="-1" role="dialog" aria-labelledby="signUpEmailModal" aria-hidden="true")
-      div(class="modal-dialog d-flex flex-column justify-content-center my-0" role="document")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
@@ -190,7 +188,7 @@ html
 
     //Email Log In modal
     div(class="modal fade" id="logInEmailModal" tabindex="-1" role="dialog" aria-labelledby="logInEmailModal" aria-hidden="true")
-      div(class="modal-dialog d-flex flex-column justify-content-center my-0" role="document")
+      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
