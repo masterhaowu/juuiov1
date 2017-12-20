@@ -21,6 +21,47 @@ html
     //Other Pages misc
     block misc
 
+    if isLoggedIn
+      style(type='text/css').
+        .navbar{
+          background-color: white;
+          box-shadow: 0 8px 6px -6px;
+        }
+        .nav-logo-white{
+          display: none;
+        }
+        .nav-logo-black{
+          display: inline;
+        }   
+        #icon{
+          color: black;
+        }
+
+
+    else
+      script.
+        //navbar color change on scroll
+        $(document).ready(function(){
+          $(window).scroll(function(){
+              if($(window).scrollTop() + $(".navbar").outerHeight() > $(".header").height()){
+                  $(".navbar").css({"background-color":"white"});
+                  $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
+                  $("#icon").css({"color":"black"});               
+                  $(".nav-logo-white").css({"display":"none"})
+                  $(".nav-logo-black").css({"display":"inline"})      
+              }
+              else{
+                  $(".navbar").css({"background-color":"transparent"});
+                  $(".navbar").css({"box-shadow":"none"});
+                  $("#icon").css({"color":"white"});
+                  $(".nav-logo-white").css({"display":"inline"})     
+                  $(".nav-logo-black").css({"display":"none"}) 
+                  
+              }
+          })
+        })
+
+
   body
     //navbar
     nav(class="navbar navbar-expand-md fixed-top navbar-light bg-none px-sm-4 px-0 pr-2")

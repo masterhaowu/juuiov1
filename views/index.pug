@@ -2,45 +2,22 @@ extends layout
 
 block misc
   if isLoggedIn
-    style(type='text/css').
-      .navbar{
-        background-color: white;
-        box-shadow: 0 8px 6px -6px;
-      }
-      .nav-logo-white{
-        display: none;
-      }
-      .nav-logo-black{
-        display: inline;
-      }   
-      #icon{
-        color: black;
-      }
-
 
   else
-    script.
-      //navbar color change on scroll
-      $(document).ready(function(){
-        $(window).scroll(function(){
-            if($(window).scrollTop() > $(".header").height()){
-                $(".navbar").css({"background-color":"white"});
-                $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
-                $("#icon").css({"color":"black"});               
-                $(".nav-logo-white").css({"display":"none"})
-                $(".nav-logo-black").css({"display":"inline"})      
-            }
-            else{
-                $(".navbar").css({"background-color":"transparent"});
-                $(".navbar").css({"box-shadow":"none"});
-                $("#icon").css({"color":"white"});
-                $(".nav-logo-white").css({"display":"inline"})     
-                $(".nav-logo-black").css({"display":"none"}) 
-                
-            }
-        })
-      })
+      script.
+        //navbar change color when clicked if on index and not loggedin
+        $(document).ready(function(){
+            var open = false;
+            $(".navbar-toggler").click(function(){
+                if(open){
+                    icon.className = 'fa fa-angle-down';  
 
+                  } else{
+                    icon.className = 'fa fa-angle-down open';
+                  }          
+                  open = !open;       
+            })
+        })      
 
 block content
   if isLoggedIn
@@ -81,6 +58,10 @@ block content
 
     div(class="container-fluid")
       div(class="row section-1")
+          div(class="col-sm ")       
+            p(class="lead") Simultaneously list your property <br> on all platforms
+            button(class="btn btn-primary") sign up
+   
 
     div(class="container-fluid")
       div(class="row section-2")

@@ -38,6 +38,10 @@ h6 {
 .container-fluid {
   padding: 0; }
 
+.container {
+  padding: 0 auto;
+  margin: 0 auto; }
+
 .row {
   margin: auto; }
 
