@@ -38,7 +38,6 @@ html
           color: black;
         }
 
-
     else
       script.
         //navbar color change on scroll
@@ -50,6 +49,8 @@ html
                 $("#icon").css({"color":"black"});               
                 $(".nav-logo-white").css({"display":"none"})
                 $(".nav-logo-black").css({"display":"inline"})      
+                $(".login").css({"border-color": "#3F87C5"})
+                $(".login").css({"color": "#3F87C5"})  
             }
             else{
                 $(".navbar").css({"background-color":"transparent"});
@@ -57,6 +58,8 @@ html
                 $("#icon").css({"color":"white"});
                 $(".nav-logo-white").css({"display":"inline"})     
                 $(".nav-logo-black").css({"display":"none"}) 
+                $(".login").css({"border-color": "white"})
+                $(".login").css({"color": "white"})  
             }
           })
         })
@@ -69,7 +72,7 @@ html
         span(class="navbar-brand pointer mx-0")
           img(class="mr-1 nav-logo-white" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mr-1 nav-logo-black" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
-          span(id="icon" class="fa fa-angle-down pr-0 mr-0")
+          span(id="icon" class="fa fa-angle-down pr-0 mx-0 align-middle")
 
       //buttons that are shown in mobile and not collapsed
       ul(class="navbar-nav d-inline d-md-none")
@@ -77,42 +80,44 @@ html
           div(class="input-group d-inline-flex d-md-none-flex pr-sm-3 pr-1")
             input(type="text" class="form-control nav-search" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
             span(class="input-group-btn")
-              button(class="btn btn-primary" type="button") <i class="fa fa-search"></i>
+              button(class="btn btn-primary" type="button" style="padding: 0.5em 1em") <i class="fa fa-search align-baseline"></i>
 
         else
           li(class="nav-item d-inline")
             button(type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#signUpModal") Sign Up
           li(class="nav-item d-inline mr-sm-3")
-            button(type="button" class="btn btn-outline-primary m-1" data-toggle="modal" data-target="#logInModal") Log In
+            button(type="button" class="login btn btn-outline-primary m-1" style="border-color:white;  color:white" data-toggle="modal" data-target="#logInModal") Log In
 
       //navbar that collapses or hidden in mobile
       div(class="collapse navbar-collapse d-md-flex" id="collapsibleNavbar")
-        a(class="navbar-brand d-none d-md-block " href="/")
+        a(class="navbar-brand d-none d-md-flex" href="/")
           img(class="mx-1 nav-logo-white ml-3" src="/images/juu_logo_white.png" width="33" height="44.5" alt="")
           img(class="mx-1 nav-logo-black ml-3" src="/images/juu_logo_black.png" width="33" height="44.5" alt="")
         if isLoggedIn
           div(class="input-group d-none d-md-inline-flex mr-auto col-lg-6")
             input(type="text" class="form-control" id="nav-search" aria-describedby="nav search" placeholder="Search for...")
             span(class="input-group-btn")
-              button(class="btn btn-primary" type="button") <i class="fa fa-search"></i>
+              button(class="btn btn-primary" type="button" style="padding: 0.5em 1em") <i class="fa fa-search"></i>
 
         //shown in non mobile - will collapse when mobile
-        ul(class="navbar-nav vertical ml-auto")
+        ul(class="navbar-nav ml-auto")
           li(class="nav-item")
             br(class="d-inline d-md-none") 
 
-          li(class="nav-item ml-3 ml-sm-0 d-inline-block")
+          li(class="nav-item ml-3 ml-sm-0 d-inline-flex")
             button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="modal" data-target="#settingsModal") Settings
           if isLoggedIn
-            li(class="nav-item ml-3 ml-sm-0 d-inline-block")
+            li(class="nav-item ml-3 ml-sm-0 d-inline-flex")
               button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="modal" data-target="#helpModal") Help 
-            li(class="nav-item dropdown d-none d-md-inline-block ml-3 ml-sm-0")
-              button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="dropdown" ) Signed in as #{user.firstname} 
+            li(class="nav-item dropdown d-none d-md-inline-flex ml-3 ml-sm-0")
+              button(type="button" class="btn btn-outline-primary m-1" data-toggle="dropdown" )  Signed in as #{user.firstname}
+
               ul.dropdown-menu
                 li(class="nav-item")
-                  button(type="button" class="btn btn-link m-1" data-toggle="modal" data-target="#userProfileModal") User Profile
+                  button(type="button" class="btn btn-link m-1" data-toggle="modal" data-target="#userProfileModal") User Profile         
                 li(class="nav-item")
                   a(role="button" class="btn btn-link m-1" href="/logout") Log Out
+
             li(class="nav-item ml-3 ml-sm-0 d-inline-block")
               button(type="button" class="btn btn-link m-1 nav-btn-mob d-md-none" data-toggle="modal" data-target="#userProfileModal") User Profile
             li(class="nav-item ml-3 ml-sm-0 d-inline-block")
@@ -126,7 +131,9 @@ html
             li(class="nav-item")
               button(type="button" class="btn btn-primary m-1 d-none d-md-block" data-toggle="modal" data-target="#signUpModal") Sign Up
             li(class="nav-item")
-              button(type="button" class="btn btn-outline-primary m-1 d-none d-md-block" data-toggle="modal" data-target="#logInModal") Log In
+              button(type="button" class="login btn btn-outline-primary m-1 d-none d-md-block" style="border-color:white;  color:white" data-toggle="modal" data-target="#logInModal") Log In
+
+
 
 
     //Sign Up Modal
@@ -143,6 +150,7 @@ html
             hr(class="hr-text")
             span Already have an account? <br>
             button(type="button" class="btn btn-link" onclick="$('#signUpModal').one('hidden.bs.modal', function() { $('#logInModal').modal('show'); }).modal('hide');") log in
+
 
 
     //Email Sign Up modal
@@ -165,11 +173,12 @@ html
               div(class="form-group")
                 input(type="password" class="form-control" id="password" placeholder="Password" name='password' pattern=".{8,}" title="Password should contain 8 characters minimum" required)            
               button(type="submit" class="btn btn-primary btn-lg btn-block") sign up
-            span I have read and agree with the following <br> <button(type="button" class="btn btn-link" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#termsAndConditionsModal').modal('show'); }).modal('hide');">terms and conditions</button>
-            
+            //span I have read and agree with the following <br> <button(type="button" class="btn btn-link my-0 py-0" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#termsAndConditionsModal').modal('show'); }).modal('hide');">terms and conditions</button>
             hr(class="hr-text")
             span Already have an account?
             button(type="button" class="btn btn-link align-baseline" style="margin: 0; padding: 0 10px" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#logInModal').modal('show'); }).modal('hide');") log in
+
+
 
     //Log In modal
     div(class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModal" aria-hidden="true")
@@ -185,6 +194,8 @@ html
             hr(class="hr-text")
             span Don't have an account? <br>
             button(type="button" class="btn btn-link" onclick="$('#logInModal').one('hidden.bs.modal', function() { $('#signUpModal').modal('show'); }).modal('hide');") sign up
+
+
 
     //Email Log In modal
     div(class="modal fade" id="logInEmailModal" tabindex="-1" role="dialog" aria-labelledby="logInEmailModal" aria-hidden="true")
@@ -203,12 +214,13 @@ html
                 input(type="password" class="form-control" id="password" placeholder="Password" name="password" required)
               button(type="submit" class="btn btn-primary btn-lg btn-block") log in
             button(type="button" class="btn btn-link" onclick="$('#logInEmailModal').one('hidden.bs.modal', function() { $('#forgotYourPasswordModal').modal('show'); }).modal('hide');") forgot your password?
-            
             hr(class="hr-text" data-content="or")
             a(role="button" class="btn btn-outline-primary btn-lg btn-block" href="/facebook") log in with facebook
             hr(class="hr-text")
             span Don't have an account?
             button(type="button" class="btn btn-link align-baseline" style="margin: 0; padding: 0 10px" onclick="$('#logInEmailModal').one('hidden.bs.modal', function() { $('#signUpModal').modal('show'); }).modal('hide');") sign up
+
+
 
     //Settings modal
     div(class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModal" aria-hidden="true")
@@ -218,7 +230,7 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") Settings
+            h4(style="color:#3F87C5") Settings
             br
             form(method='POST' action='/language')            
               div(class="form-group")
@@ -232,6 +244,8 @@ html
                     option HKD
                     option NTD
 
+
+
     //help modal
     div(class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true")
       div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
@@ -240,9 +254,11 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") Help
+            h4(style="color:#3F87C5") Help
             br
             p This is going to be the help section. There may be a search function to query out FAQ articles that answer questions customers may have. Maybe there could also be live chat here.
+
+
 
     //user profile modal
     div(class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="userProfileModalLabel" aria-hidden="true")
@@ -252,8 +268,10 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") User Profile
+            h4(style="color:#3F87C5") User Profile
             br
+
+
 
     //forgot your password modal
     div(class="modal fade" id="forgotYourPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotYourPasswordModal" aria-hidden="true")
@@ -263,8 +281,10 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") Forgot Your Password
+            h4(style="color:#3F87C5") Forgot Your Password
             br
+
+
 
     //Reset your password modal
     div(class="modal fade" id="resetYourPasswordModal" tabindex="-1" role="dialog" aria-labelledby="resetYourPasswordModal" aria-hidden="true")
@@ -274,8 +294,10 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") Reset Your Password
+            h4(style="color:#3F87C5") Reset Your Password
             br
+
+
 
     //terms and conditions modal
     div(class="modal fade" id="termsAndConditionsModal" tabindex="-1" role="dialog" aria-labelledby="termsAndConditionsModal" aria-hidden="true")
@@ -285,8 +307,10 @@ html
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#007bff") Terms and Conditions
+            h4(style="color:#3F87C5") Terms and Conditions
             br
+
+
 
   //the flash messages
   if (messages) 
@@ -301,8 +325,41 @@ html
           button(type="button" class="close" data-dismiss="alert" aria-label="Close")
             span(class="pointer" aria-hidden="true") &times
 
+
+
     //Other Pages Content
     block content
 
     
 
+    div(class="footer")
+      div(class="row")
+        div(class="footer-seperator")
+          div(class="footer-list")
+            ul
+              li
+                button(class="btn btn-link") Careers
+              li
+                button(class="btn btn-link") Press
+              li
+                button(class="btn btn-link" ) Help
+              li
+                button(class="btn btn-link" ) Policies
+              li
+                button(class="btn btn-link" ) Terms & Privacy 
+
+        div(class="footer-seperator")
+          h3 Join Us on
+          div(class="footer-medialinks")
+            a(href="https://www.facebook.com/thejuu.io")
+              i(class="fa fa-facebook" aria-hidden='true')
+            a(href="https://twitter.com/juu_io")          
+              i(class="fa fa-twitter" aria-hidden='true')
+            a(href="https://www.linkedin.com/company/juu-io/")          
+              i(class="fa fa-linkedin" aria-hidden='true')
+            a(href="https://www.instagram.com/juu.io/")          
+              i(class="fa fa-instagram" aria-hidden='true')
+            a(href="https://www.pinterest.com/juu_io/")          
+              i(class="fa fa-pinterest-p" aria-hidden='true')
+              
+          p(class="footer-copyright") copyrights juu.io 2017

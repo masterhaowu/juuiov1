@@ -1,20 +1,86 @@
-//global sizing (non-size affecting)
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ * v2.0 | 20110126
+ * License: none (public domain)
+/*major reset
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+
+/* HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block
+
+//Lists
+ol, ul
+  list-style: none
+
+//quotes
+blockquote, q
+  quotes: none
+
+blockquote
+  &:before, &:after
+    content: ''
+    content: none
+
+q
+  &:before, &:after
+    content: ''
+    content: none
 
 //Buttons and Links Styling
-
+a
+  text-decoration: none
 
 a:hover
   text-decoration: none
 
+.btn
+  border-radius: 50px
+  padding: 0.5em 2em
+
 .btn:hover
   cursor: pointer
+  text-decoration: none
+
+.btn-link
+  color: #3F87C5
+
+.btn-link:hover
+  color: #274C77
+
+.btn-primary
+  background-color: #3F87C5
+  border-color: #3F87C5
+
+.btn-primary:hover
+  background-color: #274C77
+  border-color: #274C77
+
+.btn-outline-primary
+  border-color: #3F87C5
+  color: #3F87C5
+
+.btn-primary:active
+  background-color: #3F87C5 !important
+  border-color: #3F87C5 !important
+
+.btn-outline-primary:hover
+  background-color: #3F87C5
+  border-color: #3F87C5 !important
+  color: white !important
+
+.btn-outline-primary:active
+  background-color: #3F87C5 !important
 
 .pointer:hover
   cursor: pointer
 
-.btn-link:hover
-  text-decoration: none
-
+//Input Styling
+.form-control
+  border-radius: 50px
 
 //Div Styling
 .jumbotron
@@ -22,30 +88,31 @@ a:hover
   background-size: cover
   color: white
 
-.section-1
-
-.section-2
-  background-color: black
+.section
+  background-color: blue
+  max-width: 1024px
   
 .container-fluid 
   padding: 0
   background-color: purple
 
-.container
-  padding: 0 auto 
-  margin: 0 auto 
-  background-color: blue
-
+.col
+  background-color: black
+  
 .row
   margin: auto
   background-color: green
 
+
 .col-sm
   text-align: center
-  background-color: red
+  background-color: pink
   margin: 5vh
 
-
+table
+  border-collapse: collapse
+  border-spacing: 0
+  
 //Navbar Styling
 .navbar
   transition: all 0.5s
@@ -99,7 +166,10 @@ a:hover
     line-height: 1.5em 
     color: #818078 
     background-color: #ffffff 
-   
+
+.modal-content
+  border-radius: 0
+  
 .modal-header
   border-style: none
 
@@ -119,11 +189,74 @@ input:required:valid
   border-color: #28a745
 
 
-
+.dropdown-menu
+  border-radius: 0
 
 
 
 //footer
+.footer
+  background-color: black
+  padding: 30px 0
+  *
+    color: white
+    text-align: center
+  
+  a:hover
+    color: #ccc
+
+  i:hover
+    opacity: 0.8
+    cursor: pointer
+
+  .btn:hover
+    color: #ccc
+
+  .footer-seperator
+    display: block
+    width: 100%
+    background-color: yellow
+    margin: 0 auto
+    padding-top: 20px
+    padding-bottom: 20px
+    border-bottom: 1px solid #aaa
+    &:last-of-type
+      border: none
+
+  .footer-list
+    flex-grow: 1
+    font-size: 0.9em
+    
+    ul
+      text-align: center
+      margin: auto
+      li
+        float: none
+
+        .btn
+          display: inline-block
+          margin: 0 auto
+          margin-bottom: 5px
+          font-size: 0.9em
+          letter-spacing: 0.03em
+
+  .footer-medialinks 
+    margin-top: 1em
+    i
+      display: inline-block
+      width: 35px
+      height: 35px
+      font-size: 0.9em
+      background: #333
+      padding: 8px
+      border: 1px solid white
+      border-radius: 50%
+      margin: 0 10px 20px 10px
+
+  .footer-copyright
+    color: grey
+    font-size: 0.9em
+    letter-spacing: 0.01
 
 
 
@@ -196,7 +329,6 @@ h6
 	.nav-search
 	  max-width: 215px
 
-
 // Medium devices (tablets, 48em and up)
 // 
 // overridden Bootstraps rem's and are
@@ -207,7 +339,7 @@ h6
 // Bootstrap defaults.
 //
 //------------------------------------------------------------//
-@media (min-width: 48em)  
+@media (min-width: 48em)
 	h1  
 	  font-size: 2.441em 
 	 
@@ -224,40 +356,46 @@ h6
 		font-size: 6em 
 	 
 	.display-2  
-		font-size: 5.5em 
+		font-size: 5.5em
 	 
 	.display-3  
-		font-size: 4.5em 
+		font-size: 4.5em
 	 
 	.display-4  
-		font-size: 3.5em 
-   
+		font-size: 3.5em
+
 	.jumbotron  
     padding: 25vh 10vw
 
+	.footer 
+    overflow: hidden
+
+	.footer ul
+    clear: left
+    left: 50%
+    position: relative
+    float: left !important
+
+	.footer ul li  
+    position: relative
+    right: 50%
+    float: left !important
+
 // Large devices (desktops, 62em and up)
 @media (min-width: 62em)  
-	html,
-	body  
-		font-size: 19px !important 
+	html, body  
+		font-size: 19px !important
 	 
   .jumbotron
     height: 80vh 
     padding: 25vh 10vw
 
-  .section-1
-    height: 40vh
-
-  .section-2
-    background-color: black
-    padding: 10vh
-
 // Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em)  
 	html,
 	body  
-		font-size: 21px !important 
-	 
+		font-size: 21px !important
+
  
 
 

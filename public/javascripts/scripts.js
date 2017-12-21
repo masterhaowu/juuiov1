@@ -10,14 +10,15 @@ $(document).ready(function(){
 
     $(".navbar-toggler").click(function(){
         if(open){
-            icon.className = 'fa fa-angle-down';
-          } else{
-            icon.className = 'fa fa-angle-down open';
-
-          }          
-          open = !open;       
+            icon.className = 'fa fa-angle-down align-middle';
+        } else{
+            icon.className = 'fa fa-angle-down open align-middle';
+        }          
+        open = !open;       
     })
 })
+
+
 
 //alert dynamic position
 $(document).ready(function(){    
