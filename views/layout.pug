@@ -173,7 +173,6 @@ html
               div(class="form-group")
                 input(type="password" class="form-control" id="password" placeholder="Password" name='password' pattern=".{8,}" title="Password should contain 8 characters minimum" required)            
               button(type="submit" class="btn btn-primary btn-lg btn-block") sign up
-            //span I have read and agree with the following <br> <button(type="button" class="btn btn-link my-0 py-0" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#termsAndConditionsModal').modal('show'); }).modal('hide');">terms and conditions</button>
             hr(class="hr-text")
             span Already have an account?
             button(type="button" class="btn btn-link align-baseline" style="margin: 0; padding: 0 10px" onclick="$('#signUpEmailModal').one('hidden.bs.modal', function() { $('#logInModal').modal('show'); }).modal('hide');") log in
@@ -299,18 +298,60 @@ html
 
 
 
-    //terms and conditions modal
-    div(class="modal fade" id="termsAndConditionsModal" tabindex="-1" role="dialog" aria-labelledby="termsAndConditionsModal" aria-hidden="true")
-      div(class="modal-dialog h-100 d-flex flex-column justify-content-center my-0" role="document")
+    //terms and privacy modal
+    div(class="modal fade" id="termsAndPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="termsAndPrivacyModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
           div(class="modal-body" style="text-align:center")
-            h4(style="color:#3F87C5") Terms and Conditions
+            h4(style="color:#3F87C5") Terms and Privacy
             br
 
+    //policies modal
+    div(class="modal fade" id="policiesModal" tabindex="-1" role="dialog" aria-labelledby="policiesModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#3F87C5") Policies
+            br
 
+    //pricing modal
+    div(class="modal fade" id="pricingModal" tabindex="-1" role="dialog" aria-labelledby="pricingModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#3F87C5") Pricing
+            br
+
+    //careers modal
+    div(class="modal fade" id="careersModal" tabindex="-1" role="dialog" aria-labelledby="careersModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#3F87C5") Careers
+            br
+
+    //press modal
+    div(class="modal fade" id="pressModal" tabindex="-1" role="dialog" aria-labelledby="pressModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#3F87C5") Press
+            br
 
   //the flash messages
   if (messages) 
@@ -333,20 +374,20 @@ html
     
 
     div(class="footer")
-      div(class="row")
+      div(class="row section")
         div(class="footer-seperator")
           div(class="footer-list")
             ul
               li
-                button(class="btn btn-link") Careers
+                button(type="button" class="btn btn-link" data-toggle="modal" data-target="#careersModal") Careers
               li
-                button(class="btn btn-link") Press
+                button(type="button" class="btn btn-link" data-toggle="modal" data-target="#pressModal") Press
               li
-                button(class="btn btn-link" ) Help
+                button(type="button" class="btn btn-link" data-toggle="modal" data-target="#helpModal") Help
               li
-                button(class="btn btn-link" ) Policies
+                button(type="button" class="btn btn-link" data-toggle="modal" data-target="#policiesModal") Policies
               li
-                button(class="btn btn-link" ) Terms & Privacy 
+                button(type="button" class="btn btn-link" data-toggle="modal" data-target="#termsAndPrivacyModal") Terms & Privacy
 
         div(class="footer-seperator")
           h3 Join Us on

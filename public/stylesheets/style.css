@@ -2,6 +2,18 @@
  * v2.0 | 20110126
  * License: none (public domain) */
 /*major reset */
+textarea {
+  -webkit-appearance: none;
+  border-radius: 30px; }
+
+input.text, input[type="text"], input[type="button"], input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 30px; }
+
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 30px; }
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -34,7 +46,7 @@ a:hover {
 
 .btn {
   border-radius: 50px;
-  padding: 0.5em 2em; }
+  padding: 0.5em 1.8em; }
 
 .btn:hover {
   cursor: pointer;
@@ -81,24 +93,27 @@ a:hover {
   background-size: cover;
   color: white; }
 
+.section-2 {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/spirationdark.png") center;
+  color: white; }
+
+.section-3 {
+  background: url("/images/whitediamond.png") center; }
+
 .section {
-  background-color: blue;
   max-width: 1024px; }
 
 .container-fluid {
-  padding: 0;
-  background-color: purple; }
+  padding: 0; }
 
 .col {
-  background-color: black; }
+  margin: auto; }
 
 .row {
-  margin: auto;
-  background-color: green; }
+  margin: auto; }
 
 .col-sm {
   text-align: center;
-  background-color: pink;
   margin: 5vh; }
 
 table {
@@ -181,7 +196,7 @@ input:required:valid {
   border-radius: 0; }
 
 .footer {
-  background-color: black;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/spirationdark.png") center;
   padding: 30px 0; }
   .footer * {
     color: white;
@@ -196,7 +211,6 @@ input:required:valid {
   .footer .footer-seperator {
     display: block;
     width: 100%;
-    background-color: yellow;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -213,7 +227,7 @@ input:required:valid {
         float: none; }
         .footer .footer-list ul li .btn {
           display: inline-block;
-          margin: 0 auto;
+          padding: 10px 10px;
           margin-bottom: 5px;
           font-size: 0.9em;
           letter-spacing: 0.03em; }
@@ -231,7 +245,7 @@ input:required:valid {
       margin: 0 10px 20px 10px; }
   .footer .footer-copyright {
     color: grey;
-    font-size: 0.9em;
+    font-size: 0.7em;
     letter-spacing: 0.01; }
 
 html,
@@ -275,15 +289,21 @@ h6 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) {
   .nav-search {
-    max-width: 180px; } }
+    max-width: 170px; }
+  .btn {
+    padding: 0.5em 1.4em; } }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 374px) {
   .nav-search {
-    max-width: 200px; } }
+    max-width: 200px; }
+  .btn {
+    padding: 0.5em 1.4em; } }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 410px) {
   .nav-search {
-    max-width: 215px; } }
+    max-width: 215px; }
+  .btn {
+    padding: 0.5em 1.4em; } }
 
 @media (min-width: 48em) {
   h1 {
@@ -303,7 +323,7 @@ h6 {
   .display-4 {
     font-size: 3.5em; }
   .jumbotron {
-    padding: 25vh 10vw; }
+    padding: 15vh 10vw; }
   .footer {
     overflow: hidden; }
   .footer ul {
