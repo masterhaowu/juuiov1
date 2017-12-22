@@ -6,6 +6,9 @@ select {
   border-radius: 50px !important;
   -webkit-appearance: none; }
 
+select:hover {
+  cursor: pointer; }
+
 textarea {
   -webkit-appearance: none;
   border-radius: 50px; }

@@ -14,7 +14,7 @@ const async = require('async');
 const crypto = require('crypto');
 
 
-const forget = (req,res) => {
+const forget = (req,res,next) => {
     async.waterfall([
         done => {
             crypto.randomBytes(20, (err, buf) => {
