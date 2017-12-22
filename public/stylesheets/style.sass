@@ -2,18 +2,21 @@
  * v2.0 | 20110126
  * License: none (public domain)
 /*major reset
+select
+  border-radius: 50px !important
+
 textarea
   -webkit-appearance: none
-  border-radius: 30px
+  border-radius: 50px
 
 input
   &.text, &[type="text"], &[type="button"], &[type="submit"]
-    -webkit-appearance: none
-    border-radius: 30px
+    -webkit-appearance: none 
+    border-radius: 50px
 
 .input-checkbox
   -webkit-appearance: none
-  border-radius: 30px
+  border-radius: 50px
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
@@ -46,9 +49,11 @@ q
 //Buttons and Links Styling
 a
   text-decoration: none
+  color: #3F87C5  
 
 a:hover
   text-decoration: none
+  color: #274C77
 
 .btn
   border-radius: 50px
@@ -111,6 +116,16 @@ a:hover
   background: url("/images/whitediamond.png") center
 
 .section-4
+  .col-sm
+    margin: 5vh auto
+
+  p
+    margin: 0 30px
+    margin-top: 30px
+
+    
+.section-4-1
+  flex-direction: column-reverse
 
 
 .section
@@ -338,6 +353,8 @@ h6
   padding: 20vh 10vw
   margin: 0 auto
 
+.index-image
+  width: 250px
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 359px) //iphone 5
 	.nav-search
@@ -346,6 +363,8 @@ h6
 	.btn
 	  padding: 0.5em 1.4em
 
+	.index-image
+	  width: 200px
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 374px) //galaxy s5
 	.nav-search
@@ -354,6 +373,9 @@ h6
 	.btn
 	  padding: 0.5em 1.4em
 
+	.index-image
+	  width: 250px
+
 @media only screen and (min-device-width: 375px) and (max-device-width: 410px) //iphone 6
 	.nav-search
 	  max-width: 215px
@@ -361,7 +383,10 @@ h6
 	.btn
 	  padding: 0.5em 1.4em
 
-// Medium devices (tablets, 48em and up)
+	.index-image
+	  width: 280px
+
+// Medium devices (tablets, 36em and up)
 // 
 // overridden Bootstraps rem's and are
 // into module based font sizes 
@@ -371,7 +396,7 @@ h6
 // Bootstrap defaults.
 //
 //------------------------------------------------------------//
-@media (min-width: 48em)
+@media (min-width: 36em)
 	h1  
 	  font-size: 2.441em 
 	 
@@ -413,6 +438,9 @@ h6
     right: 50%
     float: left !important
 
+	.section-4-1
+    flex-direction: row
+
 // Large devices (desktops, 62em and up)
 @media (min-width: 62em)  
 	html, body  
@@ -422,15 +450,14 @@ h6
     height: 80vh 
     padding: 25vh 10vw
 
+  .index-image
+    width: 400px
+
 // Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em)  
 	html,
 	body  
 		font-size: 21px !important
-
- 
-
-
 
 
 

@@ -231,18 +231,17 @@ html
           div(class="modal-body" style="text-align:center")
             h4(style="color:#3F87C5") Settings
             br
-            form(method='POST' action='/language')            
-              div(class="form-group")
+            form(method='POST' action='/language')   
+              div(class="form-group")                    
                   select(class="form-control" id="language")
                     option English               
                     option 中文
-            form(method='POST' action='/currency')            
-              div(class="form-group")
-                  select(class="form-control" id="currency")
-                    option USD               
-                    option HKD
-                    option NTD
-
+            form(method='POST' action='/currency') 
+              div(class="form-group")           
+                select(class="form-control" id="currency")
+                  option USD               
+                  option HKD
+                  option NTD
 
 
     //help modal
