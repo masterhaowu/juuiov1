@@ -8,6 +8,8 @@ var sassMiddleware = require('node-sass-middleware');
 var passport = require('passport');
 var flash = require ('connect-flash');
 var session = require ('express-session')
+var async = require('async');
+var crypto = require('crypto');
 
 //routes
 var index = require('./routes/index');
@@ -16,6 +18,7 @@ var logout = require('./routes/logout');
 var emailsignup = require('./routes/emailsignup');
 var emaillogin = require('./routes/emaillogin');
 var facebook = require('./routes/facebook');
+var forgotyourpassword = require('./routes/forgotyourpassword');
 
 var app = express();
 
@@ -63,6 +66,8 @@ app.use('/logout', logout);
 app.use('/emailsignup', emailsignup);
 app.use('/emaillogin', emaillogin);
 app.use('/facebook', facebook);
+app.use('/forgotyourpassword', forgotyourpassword);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

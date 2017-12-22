@@ -3,7 +3,8 @@
  * License: none (public domain) */
 /*major reset */
 select {
-  border-radius: 50px !important; }
+  border-radius: 50px !important;
+  -webkit-appearance: none; }
 
 textarea {
   -webkit-appearance: none;
@@ -99,7 +100,7 @@ a:hover {
   color: white; }
 
 .section-2 {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/spirationdark.png") center;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/spirationdark.png") center;
   color: white; }
 
 .section-3 {

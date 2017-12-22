@@ -38,10 +38,73 @@ html
           color: black;
         }
 
+      script.
+        var open = false;
+
+        //navbar button angle turn when clicked
+        $(document).ready(function(){
+            $(".navbar-toggler").click(function(){
+                if(open){
+                    icon.className = 'fa fa-angle-down align-middle';
+                } else{
+                    icon.className = 'fa fa-angle-down open align-middle';
+                }          
+                open = !open;       
+            })
+        })
+
     else
       script.
         //navbar color change on scroll
+        var open = false;
         $(document).ready(function(){
+          $(".navbar-toggler").click(function(){
+              if(!open){
+                    if($(document).scrollTop() + $(".navbar").outerHeight() > $(".jumbotron").outerHeight()){
+                        icon.className = 'fa fa-angle-down open align-middle';
+                        $(".navbar").css({"background-color":"white"});
+                        $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
+                        $("#icon").css({"color":"black"});               
+                        $(".nav-logo-white").css({"display":"none"})
+                        $(".nav-logo-black").css({"display":"inline"})      
+                        $(".login").css({"border-color": "#3F87C5"})
+                        $(".login").css({"color": "#3F87C5"})                        
+                    }
+                    else{
+                        icon.className = 'fa fa-angle-down open align-middle';
+                        $(".navbar").css({"background-color":"rgba(0,0,0,0.7)"});
+                        $(".navbar").css({"box-shadow":"none"});
+                        $("#icon").css({"color":"white"});
+                        $(".nav-logo-white").css({"display":"inline"})     
+                        $(".nav-logo-black").css({"display":"none"}) 
+                        $(".login").css({"border-color": "white"})
+                        $(".login").css({"color": "white"})                                 
+                    }
+              } else{
+                  
+                    if($(document).scrollTop() + $(".navbar").outerHeight() > $(".jumbotron").outerHeight()){
+                        icon.className = 'fa fa-angle-down align-middle';
+                        $(".navbar").css({"background-color":"white"});
+                        $(".navbar").css({"box-shadow":"0 8px 6px -6px"});            
+                        $("#icon").css({"color":"black"});               
+                        $(".nav-logo-white").css({"display":"none"})
+                        $(".nav-logo-black").css({"display":"inline"})      
+                        $(".login").css({"border-color": "#3F87C5"})
+                        $(".login").css({"color": "#3F87C5"})                        
+                    }
+                    else{
+                        icon.className = 'fa fa-angle-down align-middle';
+                        $(".navbar").css({"background-color":"transparent"});
+                        $(".navbar").css({"box-shadow":"none"});
+                        $("#icon").css({"color":"white"});
+                        $(".nav-logo-white").css({"display":"inline"})     
+                        $(".nav-logo-black").css({"display":"none"}) 
+                        $(".login").css({"border-color": "white"})
+                        $(".login").css({"color": "white"})                                 
+                    }
+              }          
+              open = !open;       
+          })
           $(window).scroll(function(){
             if($(window).scrollTop() + $(".navbar").outerHeight() > $(".jumbotron").outerHeight()){
                 $(".navbar").css({"background-color":"white"});
@@ -53,13 +116,25 @@ html
                 $(".login").css({"color": "#3F87C5"})  
             }
             else{
-                $(".navbar").css({"background-color":"transparent"});
-                $(".navbar").css({"box-shadow":"none"});
-                $("#icon").css({"color":"white"});
-                $(".nav-logo-white").css({"display":"inline"})     
-                $(".nav-logo-black").css({"display":"none"}) 
-                $(".login").css({"border-color": "white"})
-                $(".login").css({"color": "white"})  
+                if(open){
+                  $(".navbar").css({"background-color":"rgba(0,0,0,0.7)"});
+                  $(".navbar").css({"box-shadow":"none"});
+                  $("#icon").css({"color":"white"});
+                  $(".nav-logo-white").css({"display":"inline"})     
+                  $(".nav-logo-black").css({"display":"none"}) 
+                  $(".login").css({"border-color": "white"})
+                  $(".login").css({"color": "white"})                    
+                }
+
+                else{
+                  $(".navbar").css({"background-color":"transparent"});
+                  $(".navbar").css({"box-shadow":"none"});
+                  $("#icon").css({"color":"white"});
+                  $(".nav-logo-white").css({"display":"inline"})     
+                  $(".nav-logo-black").css({"display":"none"}) 
+                  $(".login").css({"border-color": "white"})
+                  $(".login").css({"color": "white"})  
+                }
             }
           })
         })
@@ -281,6 +356,10 @@ html
           div(class="modal-body" style="text-align:center")
             h4(style="color:#3F87C5") Forgot Your Password
             br
+            form(method='POST' action='/forgotyourpassword')
+              div(class="form-group")
+                input(type="email" class="form-control" id="email" placeholder="Enter email" name="email" required)
+              button(type="submit" class="btn btn-primary btn-lg btn-block") submit
 
 
 
