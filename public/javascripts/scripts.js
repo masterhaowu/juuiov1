@@ -21,3 +21,14 @@ window.setTimeout(function() {
 }, 2000);
 
 });
+
+//show reset modal
+$(document).ready(function() {
+
+    if(window.location.href.indexOf('#resetYourPasswordModal') != -1) {
+      $('#resetYourPasswordModal').modal('show');
+    }
+  
+});
+  
+  

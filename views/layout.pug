@@ -22,6 +22,8 @@ html
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous")
     script(src="/javascripts/scripts.js")
 
+
+
     if isLoggedIn
       style(type='text/css').
         .navbar{
@@ -56,6 +58,7 @@ html
     else
       script.
         //navbar color change on scroll
+
         var open = false;
         $(document).ready(function(){
           $(".navbar-toggler").click(function(){
@@ -185,7 +188,7 @@ html
             li(class="nav-item ml-3 ml-sm-0 d-inline-flex")
               button(type="button" class="btn btn-link m-1 nav-btn-mob" data-toggle="modal" data-target="#helpModal") Help 
             li(class="nav-item dropdown d-none d-md-inline-flex ml-3 ml-sm-0")
-              button(type="button" class="btn btn-outline-primary m-1" data-toggle="dropdown" )  Signed in as #{user.firstname}
+              button(type="button" class="btn btn-outline-primary m-1" data-toggle="dropdown" )  Signed in as #{user.firstname} 
 
               ul.dropdown-menu
                 li(class="nav-item")
@@ -312,12 +315,11 @@ html
                     option English               
                     option 中文
             form(method='POST' action='/currency') 
-              div(class="form-group")           
+              div(class="input-group")           
                 select(class="form-control" id="currency")
                   option USD               
                   option HKD
                   option NTD
-
 
     //help modal
     div(class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true")
@@ -373,8 +375,10 @@ html
           div(class="modal-body" style="text-align:center")
             h4(style="color:#3F87C5") Reset Your Password
             br
-
-
+            form(method='POST')
+              div(class="form-group")
+                input(type="password" class="form-control" id="password" placeholder="Enter new password" name='password' pattern=".{8,}" title="Password should contain 8 characters minimum" required)
+              button(type="submit" class="btn btn-primary btn-lg btn-block") reset
 
     //terms and privacy modal
     div(class="modal fade" id="termsAndPrivacyModal" tabindex="-1" role="dialog" aria-labelledby="termsAndPrivacyModal" aria-hidden="true")

@@ -62,12 +62,14 @@ const forget = (req,res,next) => {
                     pass: "e0e97e3439813f5a619688acc9b74e8a"  // generated ethereal password
                 }
             });
+
             let mailOptions = {
                 to: user.email,
                 from: 'passwordreset@juu.io',
                 subject: 'juu.io Password Reset',
-                text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\nhttp://${req.headers.host}/resetYourPassword/${token}\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`
+                text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\nPlease click on the following link, or paste this into your browser to complete the process:\n\nhttp://${req.headers.host}/resetyourpassword/${token}/#resetYourPasswordModal\n\nIf you did not request this, please ignore this email and your password will remain unchanged.\n`
             };
+            
             transporter.sendMail(mailOptions, err => {
                 req.flash('success', `An e-mail has been sent to ${user.email} with further instructions.`);
                 done(err, 'done');
@@ -80,8 +82,8 @@ const forget = (req,res,next) => {
     });
   };
 
-    module.exports = {
-        forget,
-    }
+module.exports = {
+    forget,
+}
 
 

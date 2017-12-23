@@ -19,6 +19,8 @@ var emailsignup = require('./routes/emailsignup');
 var emaillogin = require('./routes/emaillogin');
 var facebook = require('./routes/facebook');
 var forgotyourpassword = require('./routes/forgotyourpassword');
+var resetyourpassword = require('./routes/resetyourpassword');
+
 
 var app = express();
 
@@ -67,6 +69,7 @@ app.use('/emailsignup', emailsignup);
 app.use('/emaillogin', emaillogin);
 app.use('/facebook', facebook);
 app.use('/forgotyourpassword', forgotyourpassword);
+app.use('/resetyourpassword', resetyourpassword);
 
 
 // catch 404 and forward to error handler
