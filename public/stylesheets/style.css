@@ -318,7 +318,7 @@ h6 {
 
 .section-0 {
   height: 15vh;
-  padding: 15vh 10vw 5vw 10vw; }
+  padding: 17vh 10vw 5vw 10vw; }
 
 .jumbotron {
   height: 55vh;
@@ -394,7 +394,7 @@ h6 {
     html .index-image, body .index-image {
       width: 400px; }
     html .section-0, body .section-0 {
-      padding: 15vh 5vw 5vw 5vw; } }
+      padding: 20vh 5vw 5vw 5vw; } }
 
 @media (min-width: 75em) {
   html,
