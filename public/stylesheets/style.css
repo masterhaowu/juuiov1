@@ -218,6 +218,17 @@ input:required:valid {
 .dropdown-menu {
   border-radius: 0; }
 
+.add-property {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 99999;
+  background: #3F87C5;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50px; }
+
 .footer {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/spirationdark.png") center;
   padding: 30px 0; }
@@ -305,6 +316,10 @@ h6 {
 .display-4 {
   font-size: 2em; }
 
+.section-0 {
+  height: 15vh;
+  padding: 15vh 10vw 5vw 10vw; }
+
 .jumbotron {
   height: 55vh;
   padding: 20vh 10vw;
@@ -377,7 +392,9 @@ h6 {
       height: 80vh;
       padding: 25vh 10vw; }
     html .index-image, body .index-image {
-      width: 400px; } }
+      width: 400px; }
+    html .section-0, body .section-0 {
+      padding: 15vh 5vw 5vw 5vw; } }
 
 @media (min-width: 75em) {
   html,

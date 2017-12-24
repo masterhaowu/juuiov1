@@ -5,10 +5,6 @@ $(document).ready(function(){
 });
 
 
-
-
-
-
 //alert dynamic position
 $(document).ready(function(){    
     $('.alert').css('top', $('.navbar').outerHeight());

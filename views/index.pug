@@ -2,31 +2,31 @@ extends layout
 
 block content
   if isLoggedIn
-
+    div(class="container-fluid")
+      div(class="row section section-0")
+        div(class="col")
+          h1 Listed | Drafts
 
     div(class="container-fluid")
       div(class="row section")
-
-    div(class="container-fluid")
-      div(class="row section")
-        div(class="col-sm")
-          br
-          br
-          p(class="lead") Welcome to #{title}
-        div(class="col-sm")
-          br
-          br
-          p(class="lead") Welcome to #{title}
-        div(class="col-sm")
-          br
-          br
-          p(class="lead") Welcome to #{title}
-
-    div(class="container-fluid")
-      div(class="row section")
-
-
-        
+          div(class="card-deck col-sm" style="text-align: center")
+            div(class="card" style = {'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+        'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
+        onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+        onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
+        )
+              img(class="card-img-top" src="images/img_avatar3.png" style="width: 100%")
+              div(class="card-block")
+                  button(class="btn add-property mt-2" style="color: white; position: static") +
+            each user in users    
+              div(class="card" style = {'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+          'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
+          onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+          onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
+          )
+                img(class="card-img-top" src="images/img_avatar3.png" style={'width': '100%'})
+                div(class="card-block")
+                    h4(class="card-title mt-3")= user.firstname
 
   else 
     div(class="container-fluid")
