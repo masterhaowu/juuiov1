@@ -98,6 +98,13 @@ a:hover {
 .pointer:hover {
   cursor: pointer; }
 
+.nav-pills a.active {
+  background-color: #3F87C5 !important;
+  color: white !important; }
+
+.nav-pills a {
+  color: #3F87C5 !important; }
+
 .form-control {
   border-radius: 50px; }
 
@@ -137,7 +144,7 @@ a:hover {
 
 .col-sm {
   text-align: center;
-  margin: 5vh; }
+  margin: 5vh 0; }
 
 table {
   border-collapse: collapse;
@@ -222,12 +229,15 @@ input:required:valid {
   position: fixed;
   bottom: 50px;
   right: 50px;
-  z-index: 99999;
+  z-index: 99;
   background: #3F87C5;
   display: inline-block;
-  width: 75px;
-  height: 75px;
+  width: 5em;
+  height: 5em;
   border-radius: 50px; }
+
+.card-title {
+  font-size: 1.5em; }
 
 .footer {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url("/images/spirationdark.png") center;
@@ -318,7 +328,7 @@ h6 {
 
 .section-0 {
   height: 15vh;
-  padding: 17vh 10vw 5vw 10vw; }
+  padding: 17vh 3vw 13vw 3vw; }
 
 .jumbotron {
   height: 55vh;
@@ -383,7 +393,17 @@ h6 {
     right: 50%;
     float: left !important; }
   .section-4-1 {
-    flex-direction: row; } }
+    flex-direction: row; }
+  .section-0 {
+    padding: 15vw 5vw 7vw 5vw; }
+  .col-sm {
+    margin: 5vh; }
+  .add-property {
+    height: 3em;
+    width: 3em;
+    margin-top: 1.5em !important; }
+  .card-title {
+    font-size: 1em; } }
 
 @media (min-width: 62em) {
   html, body {
@@ -394,7 +414,14 @@ h6 {
     html .index-image, body .index-image {
       width: 400px; }
     html .section-0, body .section-0 {
-      padding: 20vh 5vw 5vw 5vw; } }
+      padding: 20vh 4vw 5vw 4vw; }
+    html .add-property, body .add-property {
+      height: 4em;
+      width: 4em;
+      margin-top: 0em !important; }
+    html .card-title, body .card-title {
+      font-size: 1em;
+      top: -35px !important; } }
 
 @media (min-width: 75em) {
   html,

@@ -106,6 +106,13 @@ a:hover
 .pointer:hover
   cursor: pointer
 
+.nav-pills a.active
+  background-color: #3F87C5 !important
+  color: white !important
+
+.nav-pills a
+  color: #3F87C5 !important
+
 //Input Styling
 .form-control
   border-radius: 50px
@@ -159,12 +166,13 @@ a:hover
 .col-sm
   text-align: center
   background-color:
-  margin: 5vh
+  margin: 5vh 0
 
 table
   border-collapse: collapse
   border-spacing: 0
-  
+
+
 //Navbar Styling
 .navbar
   transition: all 0.5s
@@ -249,12 +257,16 @@ input:required:valid
   position: fixed
   bottom: 50px
   right: 50px
-  z-index: 99999
+  z-index: 99
   background: #3F87C5
   display: inline-block
-  width: 75px
-  height: 75px
+  width: 5em
+  height: 5em
   border-radius: 50px
+
+.card-title
+  font-size: 1.5em
+
 
 //footer
 .footer
@@ -372,7 +384,7 @@ h6
 
 .section-0
   height: 15vh
-  padding: 17vh 10vw 5vw 10vw
+  padding: 17vh 3vw 13vw 3vw
 
 .jumbotron
   height: 55vh
@@ -467,6 +479,21 @@ h6
 	.section-4-1
     flex-direction: row
 
+	.section-0
+    padding: 15vw 5vw 7vw 5vw
+
+	.col-sm
+    margin: 5vh
+
+	.add-property
+    height: 3em
+    width: 3em
+    margin-top: 1.5em !important
+
+	.card-title
+    font-size: 1em  
+
+
 // Large devices (desktops, 62em and up)
 @media (min-width: 62em)  
 	html, body  
@@ -480,15 +507,20 @@ h6
     width: 400px
 
   .section-0
-    padding: 20vh 5vw 5vw 5vw
+    padding: 20vh 4vw 5vw 4vw
+
+  .add-property
+    height: 4em
+    width: 4em
+    margin-top: 0em !important
+
+  .card-title
+    font-size: 1em
+    top: -35px !important
 
 // Extra large devices (large desktops, 75em and up)
 @media (min-width: 75em)  
 	html,
 	body  
 		font-size: 21px !important
-
-
-
-
 

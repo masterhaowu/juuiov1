@@ -27,4 +27,19 @@ $(document).ready(function() {
   
 });
   
-  
+
+//stop add-property button going to footer
+$(document).ready(function() {
+
+    $(window).scroll(function(){
+        if($('#add-property').offset().top + $('#add-property').height() >= $('.footer').offset().top - 60){
+            $('#add-property').css('color', 'red');
+        }
+
+
+        else{            
+            $('#add-property').css('color', 'blue'); 
+        }   
+
+    }
+}

@@ -437,9 +437,18 @@ html
 
     //button add
     if isLoggedIn
-      button(class="btn add-property" style="padding:0; color: white;") +
+      button(type="button" id="add-property" class="btn add-property" data-toggle="modal" data-target="#listPropertyModal" style="padding:0; color: white;") +
 
-
+    //list property modal
+    div(class="modal fade" id="listPropertyModal" tabindex="-1" role="dialog" aria-labelledby="listPropertyModal" aria-hidden="true")
+      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+        div(class="modal-content")
+          div(class="modal-header")
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(class="pointer" aria-hidden="true") &times
+          div(class="modal-body" style="text-align:center")
+            h4(style="color:#3F87C5") List Property
+            br
 
   //the flash messages
   if (messages) 
