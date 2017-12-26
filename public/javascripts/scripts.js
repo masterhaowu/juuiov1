@@ -1,14 +1,7 @@
-
-//set position top
-$(document).ready(function(){
-    $(this).scrollTop(0);
-});
-
-
 //alert dynamic position
 $(document).ready(function(){    
     $('.alert').css('top', $('.navbar').outerHeight());
-})
+});
 
 $(document).ready(function () {
     window.setTimeout(function() {
@@ -23,18 +16,7 @@ $(document).ready(function() {
       $('#resetYourPasswordModal').modal('show');
     }
 });
-  
 
-//stop add-property button going to footer
-$(document).ready(function() {
-    $(window).scroll(function(){
-        if($("#add-property").position().top + $("#add-property").height() >= $('.footer').position().top){
-            $("#add-property").css('color', 'red');
-        }
 
-        else{            
-            $('#add-property').css('color', 'blue'); 
-        }   
-    }
-}
+
 
