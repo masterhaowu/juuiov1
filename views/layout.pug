@@ -437,7 +437,11 @@ html
 
     //button add
     if isLoggedIn
-      button(type="button" id="add-property" class="btn add-property" data-toggle="modal" data-target="#listPropertyModal" style="padding:0; color: white;") +
+      button(type="button" id="add-property" class="btn add-property" data-toggle="modal" data-target="#listPropertyModal" style = {'padding':'0', 'color': 'white','box-shadow': '0px 3px 5px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,0.24)',
+              'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)'},
+              onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+              onmouseout='this.style.boxShadow = "0 3px 5px rgba(0,0,0,0.75), 0 1px 2px rgba(0,0,0,0.24)"'
+              ) +
 
     //list property modal
     div(class="modal fade" id="listPropertyModal" tabindex="-1" role="dialog" aria-labelledby="listPropertyModal" aria-hidden="true")

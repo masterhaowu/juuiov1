@@ -9,37 +9,52 @@ block content
             li(class="nav-item")
               a(class="nav-link active" id="pills-listed-tab" data-toggle="pill" href="#listed" role="tab" aria-controls="listed" aria-selected="true") Listed
             li(class="nav-item")
-              a(class="nav-link" id="pills-drafts-tab" data-toggle="pill" href="#drats" role="tab" aria-controls="drats" aria-selected="false") Draft
+              a(class="nav-link" id="pills-drafts-tab" data-toggle="pill" href="#drafts" role="tab" aria-controls="drafts" aria-selected="false") Drafts
 
 
 
-    
-    div(class="container-fluid")
-      div(class="row")
-          div(class="col-sm-6 col-md-3 col-lg-4" style="text-align: center;")
+    div(class="tab-content" id="pills-tabContent")
+      div(class="tab-pane fade show active" id="listed" role="tabpanel" aria-labelledby="listed-tab")
+        div(class="container-fluid")
+          div(class="row")
+              div(class="col-sm-6 col-md-4 col-lg-4" style="text-align: center;")
 
-            div(class="card" style = {'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-        'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
-        onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
-        onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
-        )
-              img(class="card-img-top" src="images/img_avatar3.png" style="width: 100%")
-              div(class="card-block" style="height: 10vh")
-                  button(type="button" class="btn add-property mt-2" data-toggle="modal" data-target="#listPropertyModal" style="color: white; position: relative; padding:0; right:0;") +
-                  h4(class="card-title" style="margin:0; padding:0; top: -45px; position: relative") list a new property
+                div(class="card" style = {'border-radius':'0','box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
+            onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+            onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
+            )
+                  img(class="card-img-top" src="images/img_avatar3.png" style="width: 100%")
+                  div(class="card-block" style="height: 10vh")
+                      button(type="button" class="btn add-property mt-2" data-toggle="modal" data-target="#listPropertyModal" style="color: white; position: relative; padding:0; right:0;") +
+                      h4(class="card-title" style="margin:0; padding:0; top: -45px; position: relative") list a new property
 
-          each user in users    
-            div(class="col-sm-6 col-md-3 col-lg-4" style="text-align: center;")
-              div(class="card" style = {'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
-          'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
-          onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
-          onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
-          )
-                img(class="card-img-top" src="images/img_avatar3.png" style={'width': '100%'})
-                div(class="card-block" style="height: 10vh")
-                  button(class="btn add-property mt-2" style="color: white; position: relative; padding:0; right:0;") <i class="fa fa-pencil"></i>
-                  h4(class="card-title" style="margin:0; padding:0; top: -45px; position: relative")= user.firstname
+              each user in users    
+                div(class="col-sm-6 col-md-4 col-lg-4" style="text-align: center;")
+                  div(class="card" style = {'border-radius':'0','box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+              'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
+              onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+              onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
+              )
+                    img(class="card-img-top" src="images/img_avatar3.png" style={'width': '100%'})
+                    div(class="card-block" style="height: 10vh")
+                      button(class="btn add-property mt-2" style="color: white; position: relative; padding:0; right:0;") <i class="fa fa-pencil"></i>
+                      h4(class="card-title" style="margin:0; padding:0; top: -45px; position: relative")= user.firstname
 
+      div(class="tab-pane fade" id="drafts" role="tabpanel" aria-labelledby="drafts-tab")
+        div(class="container-fluid")
+          div(class="row")
+              div(class="col-sm-6 col-md-4 col-lg-4" style="text-align: center;")
+
+                div(class="card" style = {'box-shadow': '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+            'transition': 'all 0.3s cubic-bezier(.25,.8,.25,1)','margin-bottom':'30px','padding':'25px'},
+            onmouseover='this.style.boxShadow = "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)"',
+            onmouseout='this.style.boxShadow = "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)"'
+            )
+                  img(class="card-img-top" src="images/img_avatar3.png" style="width: 100%")
+                  div(class="card-block" style="height: 10vh")
+                      button(type="button" class="btn add-property mt-2" data-toggle="modal" data-target="#listPropertyModal" style="color: white; position: relative; padding:0; right:0;") +
+                      h4(class="card-title" style="margin:0; padding:0; top: -45px; position: relative") list a new property
 
 
 
