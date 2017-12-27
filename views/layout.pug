@@ -62,13 +62,12 @@ html
         //stop add-property button going to footer
         $(document).ready(function() {
             $(window).scroll(function() {
-                if($("#add-property").offset().top + $("#add-property").height() + 50 >= $('.footer').offset().top) {
-                    $("#add-property").css('bottom', $(".footer").height());
+                if($(window).height() + $(window).scrollTop() >= $('.footer').offset().top) {
+                    $("#add-property").css('bottom', ($(window).scrollTop()+$(window).height()) - $('.footer').offset().top + 50);
                 }
-
-                else {            
+                else{
                     $("#add-property").css('bottom', '50px');
-                }   
+                }
             });
         });
 

@@ -225,8 +225,10 @@ input:required:valid {
 .dropdown-menu {
   border-radius: 0; }
 
+#add-property {
+  position: fixed; }
+
 .add-property {
-  position: fixed;
   bottom: 50px;
   right: 50px;
   z-index: 99;
