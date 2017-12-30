@@ -63,10 +63,10 @@ html
         $(document).ready(function() {
             $(window).scroll(function() {
                 if($(window).height() + $(window).scrollTop() >= $('.footer').offset().top) {
-                    $("#add-property").css('bottom', ($(window).scrollTop()+$(window).height()) - $('.footer').offset().top + 50);
+                    $("#add-property").css('bottom', ($(window).scrollTop()+$(window).height()) - $('.footer').offset().top + 50)
                 }
                 else{
-                    $("#add-property").css('bottom', '50px');
+                    $("#add-property").css('bottom', '50px')
                 }
             });
         });
@@ -331,7 +331,7 @@ html
                     option English               
                     option 中文
             form(method='POST' action='/currency') 
-              div(class="input-group")           
+              div(class="form-group")           
                 select(class="form-control" id="currency")
                   option USD               
                   option HKD
@@ -461,14 +461,28 @@ html
 
     //list property modal
     div(class="modal fade" id="listPropertyModal" tabindex="-1" role="dialog" aria-labelledby="listPropertyModal" aria-hidden="true")
-      div(class="modal-dialog modal-lg h-100 d-flex flex-column justify-content-center my-0" role="document")
+      div(class="modal-dialog modal h-100 d-flex flex-column justify-content-center my-0" role="document")
         div(class="modal-content")
           div(class="modal-header")
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(class="pointer" aria-hidden="true") &times
-          div(class="modal-body" style="text-align:center")
-            h4(style="color:#3F87C5") List Property
-            br
+          div(class="modal-body" style="text-align:center; padding-top: 0; padding-left: 0; padding-right: 0;")
+            div(style="text-align: left")
+              hr(style="width: 20%; margin-top:0;" class="hr-progress")
+              div(style="margin-left: 1em; margin-right: 1em")
+                h4(style="color:#3F87C5") Where is the property located?
+                br
+                form(name="add-property" method='POST' action='' style="text-align: right")
+                  div(id="add-property-1" class="add-property-page")
+                    div(class="form-group")
+                      input(type="address" class="form-control" id="address" placeholder="Enter property address" name="address" required)
+                    div(class="form-group")
+                      input(type="address" class="form-control col-6 d-inline" id="address" placeholder="Room" name="address" required)
+                      input(type="address" class="form-control col-6 d-inline" id="address" placeholder="Room" name="address" required)
+
+                    button(class="btn btn-outline-primary" style="margin: 0.1em" data-dismiss="modal" aria-label="Close") cancel
+                    button(type="submit" class="btn btn-primary" style="margin: 0.1em") &nbsp next &nbsp
+
 
   //the flash messages
   if (messages) 
